@@ -1,0 +1,94 @@
+
+<?php $specials = $this->special_cats ?>
+<div class="nav-container">
+  <div class="nav-container-inner">
+    <ul id="nav">
+      <?php $i=0; foreach ($this->cats as $c) : ?>
+      	<?php $name = $c['name']; if ($name=='Men' || $name=='Women') : ?>
+	      	<li class="level0 <?php if ($i==0) echo 'first'; ?> parent">
+	      	<a href="<?php echo $c['url'] ?>">
+	      		<span><?php echo $name ?></span>
+	      	</a>
+      		<ul class="level0 . ' child child-cols' ?>">
+      			<li class="child-col">
+      				<span><?php echo $name . "'s Department" ?></span>
+      				<ul>
+	      				<?php foreach ($c['children'] as $child) :?>
+	      					<?php if ($child['name'] == 'Sale') : ?>
+	      						</ul>
+	      						<br>
+	      						<span><?php echo $name . "'s " . $child['name'] ?></span>
+	      						<ul>
+	      							<li class="col1">
+	      								<a href="<?php echo $child['url'] ?>">
+	      									<span><?php echo $child['name'] ?></span>
+	      								</a>
+	      							</li>
+	      						</ul>
+	      					</li>
+	      					<?php elseif ($child['name'] == 'Styles' || $child['name'] == 'Brands') : ?>
+	      						<li class="child-col">
+	      							<span><?php echo $name . "'s " . $child['name'] ?></span>
+	      							<ul>
+	      								<?php foreach ($child['children'] as $child2) : ?>
+	      								<li class="col1">
+	      									<a href="<?php echo $child2['url'] ?>">
+	      										<span><?php echo $child2['name'] ?></span>
+	      									</a>
+	      								</li>
+	      								<?php endforeach ?>
+	      							</ul>
+	      						</li>
+		      				<?php else : ?>
+			      				<li class="col1">
+			      					<a href="<?php echo $child['url'] ?>">
+			      						<span><?php echo $child['name'] ?></span>
+			      					</a>
+			      				</li>
+    						<?php endif ?>  				
+    					<?php endforeach ?>
+    					<li class="child-col minibanner-wrap">
+    						<?php $special = $specials[$name] ?>
+                			<a title="<?php echo $special['name'] ?>" href="<?php echo $this->getUrl($special['url']) ?>">
+                              <img alt="<?php echo $special['name'] ?>" src="<?php echo $this->getSkinUrl($special['image']) ?>">   
+               				</a>
+            			</li>
+			</ul>
+      	</li>
+      	<?php elseif ($name=='Brands' || $name=='Styles') : ?>
+      	<li class="level0 nav-3 parent">
+      		<a href="<?php echo $c['url'] ?>">
+      			<span><?php echo $name ?></span>
+      		</a>
+      		<ul class="level0 child child3<?php echo ' ' . $name; ?>">
+      			<?php foreach($c['children'] as $child2) : ?>
+      			<li class="level1">
+      				<a title="<?php echo $child2['name'] ?>" href="<?php echo $child2['url'] ?>">
+      					<?php $image = strtolower('images/media/' . $name . '/' . str_replace(" ", "-", $child2['name']) . '.jpg') ?>
+      					<img src="<?php echo $this->getSkinUrl($image) ?>"> 
+      					<?php if ($name == 'Styles') echo "<span>" . $child2['name'] . "</span>"; ?> 
+      				</a>
+      			</li>
+      			<?php endforeach ?>
+      		</ul>
+      	</li>
+      	<?php else : ?>
+      	<li class="level0 nav-5 parent last">
+      		<a href="<?php echo $c['url'] ?>">
+      			<span><?php echo $name ?></span>
+      		</a>
+      		<ul class="level0 child child5">
+      			<?php foreach($c['children'] as $child2) : ?>
+      			<li class="level1">
+      				<a href="<?php echo $child2['url'] ?>">
+      					<span><?php echo $child2['name'] ?></span>
+      				</a>
+      			</li>
+      			<?php endforeach ?>
+      		</ul>
+      	</li>
+      	<?php endif ?>
+    <?php $i++; endforeach ?>
+	</ul>
+  </div>
+</div>

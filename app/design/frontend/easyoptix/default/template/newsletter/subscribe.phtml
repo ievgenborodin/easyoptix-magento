@@ -1,0 +1,50 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="eyewear-couponletter-wrap">
+    <div class="eyewear-couponletter">
+        <div class="couponletter-left">
+            <img src="<?php echo $this->getSkinUrl('images/coupon.jpg') ?>">
+        </div>
+        <div class="couponletter-right">
+            <div class="eyewear-couponletter-inner">
+                <h3><?php echo $this->__('Get your coupons!') ?></h3>
+                <p><?php echo $this->__('We say no to spam-looking email lists that no one wants to read. We offer only individual couponsletters, which allows us to give our customers the biggest discount possible.') ?></p>
+                <div class="email-input-wrap">
+                  <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+                    <input type="text" name="email" id="newsletter" class="required-entry validate-email" />
+                    <button type="submit" class="ez-btn"><?php echo $this->__('Sign Up') ?></button>
+                  </form>
+                  <script type="text/javascript">
+                  //<![CDATA[
+                    var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+                  //]]>
+                  </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

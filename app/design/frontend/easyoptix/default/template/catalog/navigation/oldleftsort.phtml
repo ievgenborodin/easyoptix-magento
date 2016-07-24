@@ -1,0 +1,67 @@
+
+
+<div class="category-left-sort">
+	<!-- numeric arrays -->
+	<?php $i=0; foreach($this->sort_list_num_arrs as $attr_opts) : ?>
+		<div class="sort-block">
+			<?php $title = $this->sort_list_num_titles[$i] ?>
+			<h4 class="sort-block-title"><?php echo $title ?></h4>
+			<div class="sort-block-opts">
+				<input type="range" name="<?php echo strtolower(str_replace(" ", "_", $title)) ?>" min="<?php echo $attr_opts['min'] ?>" max="<?php echo $attr_opts['max'] ?>" value="<?php echo $attr_opts['max'] ?>">
+			</div>
+		</div>
+	<?php $i++; endforeach ?>
+
+	<!-- boolean arrays -->
+	<?php $i=0; foreach($this->sort_list_bool_arrs as $attr_opts) : ?>
+		<div class="sort-block">
+			<?php $title = $this->sort_list_bool_titles[$i] ?>
+			<h4 class="sort-block-title"><?php echo $title ?> <input type="checkbox" name="<?php echo strtolower(str_replace(" ", "_", $title)) ?>" value="0"></h4>
+		</div>
+	<?php $i++; endforeach ?>
+
+	<!-- string arrays -->
+	<?php $i=0; foreach($this->sort_list_str_arrs as $attr_opts) : ?>
+		<div class="sort-block">
+			<?php $title = $this->sort_list_str_titles[$i] ?>
+			<h4 class="sort-block-title"><?php echo $title ?></h4>
+			<div class="sort-block-opts">
+				<ul>
+					<?php $j=0; foreach($attr_opts as $opt) : ?>
+						<?php $label = is_string($opt) ? $opt : $opt['label']; ?>
+						<?php $value = is_string($opt) ? $opt : $opt['value']; ?>
+						<?php if ($label || $value) : ?>
+							<li>
+								<label><?php echo $label ?></label>
+								<input type="checkbox" name="<?php echo strtolower(str_replace(" ", "_", $title)) ?>" value="<?php echo $value ?>">
+							</li>
+						<?php endif ?>
+					<?php $j++; endforeach ?>
+				</ul>
+			</div>
+		</div>
+	<?php $i++; endforeach ?>
+</div>
+
+
+
+<?php
+/*echo "<pre>";
+var_dump($)*/
+	/*
+		'eyewear_type' 
+		'prescription_ready'
+		'department'
+		'style'
+		'brand'
+		'brand_model'
+		'frame_type'
+		'frame_color'
+		'bridge_width'
+		'arm_length'
+		'lens_width'
+		'lens_type'
+		'color'
+		'polarized'
+	*/
+?>

@@ -1,0 +1,53 @@
+<div class="footer">
+	<!-- <img class="footer-background" src=""> -->
+	<div class="footer-content-wrap">
+		<div class="footer-content">
+			<div class="footer-header">
+				<img class="footer-logo" src="https://easy-optix.com/skin/frontend/easyoptix/default/images/footer-logo.gif">
+				<p></p>
+			</div>
+			<div class="footer-foldercols-wrap">
+				<div class="footer-foldercols">
+					<div class="footer-folder mfirst">
+						<span>Customer Service							<i class="fa fa-caret-down"></i>
+						</span>
+						<div><ul>
+<li><a href="https://easy-optix.com/contact_us?___SID=U">Contact Us</a></li>
+<li><a href="https://easy-optix.com/returns_exchange?___SID=U">Return & Exchange</a></li>
+<li><a href="https://easy-optix.com/shipping_information?___SID=U">Shipping Information</a></li>
+<li><a href="https://easy-optix.com/privacy_policy?___SID=U">Privacy Policy</a></li>
+<li><a href="https://easy-optix.com/about_us?___SID=U">About Us</a></li>
+</ul>
+						</div>
+					</div>
+						<div class="footer-folder mlast">
+  <span>My Account
+    <i class="fa fa-caret-down"></i>
+  </span>
+  <div>
+	<ul>
+            <li><a href="https://easy-optix.com/customer/account/login/?___SID=U">Sign In</a></li>
+            <li><a href="https://easy-optix.com/checkout/cart/?___SID=U">View Cart</a></li>
+            <li><a href="https://easy-optix.com/wishlist/?___SID=U">My Wishlist</a></li>
+            <li><a href="#">Track My Order</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </div>
+</div>
+</div></div>
+<div class="footer-social-block">
+              <ul>
+                <li class="mfirst"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li class="mlast"><a href="#"><i class="fa fa-twitter"></i></a></li>
+              </ul>
+            </div>
+										<!-- </div>
+			</div> -->
+					<div class="footer-legal-block">
+						<address>&copy; 2016 Easy Optix Inc. All Rights Reserved.</address>
+					</div>
+					
+		</div>
+	</div>
+</div>

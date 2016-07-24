@@ -1,0 +1,79 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+?>
+
+<?php /* @var $this Mage_Bundle_Block_Catalog_Product_View_Type_Bundle_Option_Select */ 
+    $_option      = $this->getOption(); 
+    $_selections  = $_option->getSelections(); 
+    $_default     = $_option->getDefaultSelection(); 
+    list($_defaultQty, $_canChangeQty) = $this->_getDefaultValues(); 
+    $tierPriceHtml = ''; 
+    $curr_option_title = $this->escapeHtml($_option->getTitle());
+    $curr_title_class = implode('', explode(' ', strtolower($curr_option_title)));
+?>
+
+<div class="<?php echo $curr_title_class;?>-block">
+    <info class="compare-wrap"><div data-infoname="<?php echo $curr_title_class; ?>-help" class="compare"><i class="fa fa-question"></i></div></info>
+    <div class="draft-block-title">
+        <h4<?php if ($_option->getRequired()) echo ' class="required"' ?>><?php echo $curr_option_title; ?></h4>
+        <span class="<?php echo $curr_title_class; ?>-desc"></span>
+    </div>
+    <?php if ($this->_showSingle()): ?>
+        <?php echo $this->getSelectionTitlePrice($_selections[0]); ?>
+        <?php if ($_selections[0]->getSelectionCanChangeQty()): ?>
+            <?php $tierPriceHtml = $this->getTierPriceHtml($_selections[0]); ?>
+        <?php endif; ?>
+        <input type="hidden" name="bundle_option[<?php echo $_option->getId() ?>]" value="<?php echo $_selections[0]->getSelectionId() ?>"/>
+    <?php else:?>
+        <?php $counter=0; if (!$_option->getRequired()) : ?>
+            <div class="<?php echo $curr_title_class;?>-logo">
+                <img class="lens-img" src="<?php echo $this->getSkinUrl('images/media/draft/' . $curr_title_class . '-logo.jpg') ?>">
+            </div>
+            <div data-value="" data-index="<?php echo $counter; ?>" data-id="bundle-option-<?php echo $_option->getId() ?>" class="bundle-option-button <?php echo $curr_title_class;?>-col lens-marked">
+                <span class="recommended"><span class="why-text <?php echo $curr_title_class;?>"></span></span>
+                <div class="<?php echo $curr_title_class;?>-title">None &nbsp; $0</div>
+            </div>
+        <?php endif ?>
+            <input type="hidden" name="bundle_option[<?php echo $_option->getId() ?>]" value='' id="bundle-option-<?php echo $_option->getId() ?>" class="bundle-option-select change-container-classname"> 
+        <?php foreach ($_selections as $_selection): ?>
+            <?php if ($_selection->getSelectionCanChangeQty() && $this->_isSelected($_selection)): ?>
+                <?php $tierPriceHtml = $this->getTierPriceHtml($_selection); ?>
+            <?php endif; ?>
+            <div data-value="<?php echo $_selection->getSelectionId() ?>" data-index="<?php echo $counter ?>" data-id="bundle-option-<?php echo $_option->getId() ?>" class="bundle-option-button <?php echo $curr_title_class;?>-col">
+                <div class="recommended"><span class="why-text <?php echo $curr_title_class;?>"></span></div>
+                <div class="<?php echo $curr_title_class;?>-title"><?php echo $this->getSelectionTitlePrice($_selection, false) ?></div>
+                <?php if ($_option->getRequired()) :?> 
+                    <img class="lens-img" src="<?php echo $this->getSkinUrl('images/media/draft/' . $curr_title_class . '-' . $counter . '.png'); ?>"/>
+                <?php endif ?>
+            </div>
+        <?php $counter++; endforeach; ?>
+    <?php endif; ?>
+    <span id="bundle-option-<?php echo $_option->getId() ?>-tier-prices"> <?php echo $tierPriceHtml; ?></span>
+    <span class="qty-holder">
+        <label for="bundle-option-<?php echo $_option->getId() ?>-qty-input"><?php echo $this->__('Qty:') ?>&nbsp;</label><input onkeyup="bundle.changeOptionQty(this, event)" onblur="bundle.changeOptionQty(this, event)" <?php if (!$_canChangeQty) echo ' disabled="disabled"' ?> id="bundle-option-<?php echo $_option->getId() ?>-qty-input" class="input-text qty<?php if (!$_canChangeQty) echo ' qty-disabled' ?>" type="text" name="bundle_option_qty[<?php echo $_option->getId() ?>]" value="<?php echo $_defaultQty ?>"/>
+    </span>
+</div>

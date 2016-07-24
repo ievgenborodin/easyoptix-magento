@@ -1,0 +1,23 @@
+<?php $random_products = Mage::getModel('easyoptix/randproducts')->getRandomProducts(); ?>
+
+<div class="random-products-wrap">
+	<div class="random-products">
+		<ul>
+			<?php foreach ($random_products as $p) : ?>
+			<li>
+				<a class="random-product-a" href="<?php echo $this->helper('catalog/product')->getProductUrl($p) ?>">
+					<div class="image-holder">
+						<img src="<?php echo $this->helper('catalog/image')->init($p, 'small_image')->resize(300,240) ?>"/>
+					</div>
+					<div class="title-holder">
+						<div class="random-product-title"><?php echo $p->getName() ?></div>
+						<div class="random-product-price">
+							<?php echo number_format($p->getPrice(), 2) ?>
+						</div>
+					</div>
+				</a>
+			</li>
+			<?php endforeach ?>
+		</ul>
+	</div>
+</div>

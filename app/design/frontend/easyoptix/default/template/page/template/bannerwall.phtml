@@ -1,0 +1,121 @@
+<?php 
+	$bannerwallModel = Mage::getModel('easyoptix/bannerwall');
+	$b = $bannerwallModel->getBannersData(); 
+	$eyewear_type = $bannerwallModel->getEyewearType();
+	$img_path = $this->getSkinUrl('images/media/banners') . '/' . $eyewear_type;
+?>
+
+<div class="content-banner">
+<div class="bannerwall-wrap">
+	<div class="bannerwall">
+		<div class="bw-cell bw-hor">
+			<div class="bw-cell-inner a">
+				<img class="bw-img" src="<?php echo $img_path . '/left-t.jpg' ?>"/>
+		    	<!-- darkness -->
+		            <div class="darkness-wrap">
+		                <div class="darkness">
+		                    <div class="darkness-background"></div>
+		                    <div class="darkness-content-wrap">
+			                    <div class="darkness-content">
+
+			                        <div class="darkness-btn-box">
+			                        <?php $curr_b = $b['left-top'][0];
+			                        	$curr_url = $eyewear_type . '/' . $curr_b['href'];
+			                        	$curr_title = $curr_b['title']; 
+			                        ?>
+			                            <a href="<?php echo $this->getUrl($curr_url) ?>" class="darkness-btn right"><?php echo $curr_title ?></a>
+			                        </div>                
+			                        <div class="darkness-btn-box">
+			                        <?php $curr_b = $b['left-top'][1];
+			                        	$curr_url = $eyewear_type . '/' . $curr_b['href'];
+			                        	$curr_title = $curr_b['title']; 
+			                        ?>
+			                            <a href="<?php echo $this->getUrl($curr_url) ?>" class="darkness-btn left"><?php echo $curr_title ?></a>
+			                        </div>                     
+			                    </div>
+		                    </div>
+		                </div>
+		            </div>
+		        	<!-- end dark -->
+			</div>
+		</div>
+		
+		<div class="bw-bw-cubes">
+			<div class="bw-cell bw-cube-1">
+				<div class="bw-cell-inner b">
+					<img class="bw-img" src="<?php echo $img_path . '/left-b-1.jpg' ?>"/>
+				    <!-- darkness -->
+			            <div class="darkness-wrap">
+			                <div class="darkness">
+			                    <div class="darkness-background"></div>
+			                    <div class="darkness-content-wrap">
+				                    <div class="darkness-content">                      
+				                        <div class="darkness-btn-box">
+				                        <?php $curr_b = $b['left-bottom-1'][0];
+			                        		$curr_url = $eyewear_type . '/' . $curr_b['href'];
+			                        		$curr_title = $curr_b['title']; ?>
+			                            <a href="<?php echo $this->getUrl($curr_url) ?>" class="darkness-btn"><?php echo $curr_title ?></a>
+				                        </div>                   
+				                    </div>
+			                    </div>
+			                </div>
+			            </div>
+			        	<!-- end dark -->
+				</div>        
+			</div>
+			
+			<div class="bw-cell bw-cube-2">
+				<div class="bw-cell-inner c">
+					<img class="bw-img" src="<?php echo $img_path . '/left-b-2.jpg' ?>"/>
+				    <!-- darkness -->
+			            <div class="darkness-wrap">
+			                <div class="darkness">
+			                    <div class="darkness-background"></div>
+			                    <div class="darkness-content-wrap">
+				                    <div class="darkness-content">                      
+				                        <div class="darkness-btn-box">
+				                        <?php $curr_b = $b['left-bottom-2'][0];
+			                        		$curr_url = $eyewear_type . '/' . $curr_b['href'];
+			                        		$curr_title = $curr_b['title']; ?>
+			                            <a href="<?php echo $this->getUrl($curr_url) ?>" class="darkness-btn right"><?php echo $curr_title ?></a>
+				                        </div>                
+				                        <div class="darkness-btn-box">
+				                        <?php $curr_b = $b['left-bottom-2'][1];
+			                        		$curr_url = $eyewear_type . '/' . $curr_b['href'];
+			                        		$curr_title = $curr_b['title']; ?>
+			                            <a href="<?php echo $this->getUrl($curr_url) ?>" class="darkness-btn left"><?php echo $curr_title ?></a>
+				                        </div>                     
+				                    </div>
+			                    </div>
+			                </div>
+			            </div>
+			        	<!-- end dark -->
+				</div>      
+			</div>	
+		</div>
+			
+		<div class="bw-cell bw-vert">
+			<div class="bw-cell-inner d">
+				<img class="bw-img" src="<?php echo $img_path . '/right.jpg' ?>"/>
+			    <!-- darkness -->
+		            <div class="darkness-wrap">
+		                <div class="darkness">
+		                    <div class="darkness-background"></div>
+		                    <div class="darkness-content-wrap">
+			                    <div class="darkness-content">                      
+			                        <div class="darkness-btn-box">
+				                        <?php $curr_b = $b['right'][0];
+			                        		$curr_url = $eyewear_type . '/' . $curr_b['href'];
+			                        		$curr_title = $curr_b['title']; ?>
+			                            <a href="<?php echo $this->getUrl($curr_url) ?>" class="darkness-btn"><?php echo $curr_title ?></a>
+				                    </div>                     
+			                    </div>
+		                    </div>
+		                </div>
+		            </div>
+		        	<!-- end dark -->
+			</div>         
+		</div>
+	</div>
+</div>
+</div>

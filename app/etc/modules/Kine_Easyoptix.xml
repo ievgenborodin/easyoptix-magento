@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Kine_Easyoptix>
+			<active>true</active>
+			<codePool>local</codePool>
+			<depends>
+				<Mage_Cms/>
+			</depends>
+		</Kine_Easyoptix>
+	</modules>
+</config>

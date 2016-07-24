@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Bor_Catalog>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Bor_Catalog>
+	</modules>
+</config>

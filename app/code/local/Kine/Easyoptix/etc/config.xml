@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+
+	<modules>
+		<Kine_Easyoptix>
+			<version>0.0.1</version>
+		</Kine_Easyoptix>
+	</modules>
+
+	<!-- define models and helpers -->
+	<global>
+		<blocks>
+			<easyoptix>
+				<class>Kine_Easyoptix_Block</class>
+			</easyoptix>
+		</blocks>
+		<models>
+			<easyoptix>
+				<class>Kine_Easyoptix_Model</class>
+			</easyoptix>
+		</models>
+		<helpers>
+			<easyoptix>
+				<class>Kine_Easyoptix_Helper</class>
+			</easyoptix>
+		</helpers>
+	</global>
+
+	<frontend>
+        <routers>
+            <easyoptix>
+                <use>standard</use>
+                <args>
+                    <module>Kine_Easyoptix</module>
+                    <frontName>easyoptix</frontName>
+                </args>
+            </easyoptix>
+        </routers>  
+        <layout>
+	     <updates>
+	       <easyoptix>
+	         <file>easyoptix.xml</file>
+	       </easyoptix>
+	     </updates>
+	   </layout>
+    </frontend>
+
+	<!-- avoid 404 permissions problem -->
+	<adminhtml>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<kine>
+											<title>Kine - All</title>
+										</kine>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	
+</config>

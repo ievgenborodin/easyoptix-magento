@@ -1,0 +1,65 @@
+<ul>	
+	<?php foreach ($this->cms_pages as $page) : ?>
+		<li class="single">
+			<a href="<?php echo $page['url'] ?>"><?php echo $page['name'] ?></a>
+		</li>
+	<?php endforeach ?>
+	<?php foreach($this->cats as $c) :?>
+		<?php $name = $c['name'] ?>
+		<li class="parent">
+			<span><?php echo $name ?></span>
+			<p><a href="<?php echo $c['url'] ?>"><?php echo $name ?></a></p>
+		<?php if ($name=='Men' || $name=='Women') : ?>
+			<ul class="child child-cols">
+				<li class="child-col"><span><?php echo $name . "'s Department" ?></span>
+					<ul>
+					<?php foreach($c['children'] as $child) : ?>
+						<?php $child_name = $child['name']; if ($child_name == 'Sale') : ?>
+					</ul>
+					<br>
+					<span><?php echo $name . ".s $child_name" ?></span>
+					<ul>
+						<li class="col1"><a href="<?php echo $child['url'] ?>"><?php echo $child_name ?></a></li>
+					</ul>
+				</li>
+					<?php elseif ($child_name == 'Styles' || $child_name == 'Brands') :?>
+				<li class="child-col">
+					<span><?php echo $name . "'s $child_name" ?></span>
+					<ul>
+						<?php foreach($child['children'] as $child2) : ?>
+						<li class="col1">
+							<a href="<?php echo $child2['url'] ?>"><span><?php echo $child2['name'] ?></span></a>
+						</li>
+						<?php endforeach ?>
+					</ul>
+				</li>
+						<?php else : ?>
+						<li class="col1">
+							<a href="<?php echo $child['url'] ?>"><?php echo $child['name'] ?></a>
+						</li>
+						<?php endif ?>
+					<?php endforeach ?>
+			</ul>
+		</li>
+		<?php elseif ($name=='Brands' || $name=='Styles') : ?>
+			<ul class="child child3">
+				<?php foreach ($c['children'] as $child) :?>
+					<?php $image = strtolower('images/media/' . $name . '/' . str_replace(" ", "-", $child['name']) . '.jpg') ?>
+					<li><a href="<?php echo $child['url']; $child_name = $child['name'] ?>"><img src="<?php echo $this->getSkinUrl($image) ?>"><?php if ($name == 'Styles') echo "<span>$child_name</span>"; ?></a></li>
+				<?php endforeach ?>
+			</ul>
+		</li>
+		<?php else : ?>
+			<?php if (isset($c['children'])) :?>
+			<ul class="child child5">
+				<?php foreach($c['children'] as $child) :?>
+				<li><a href="<?php echo $child['url'] ?>">
+					<span><?php echo $child['name'] ?></span>
+				</a></li>
+				<?php endforeach ?>
+			</ul>
+			<?php endif ?>
+		</li>
+      	<?php endif ?>
+    <?php endforeach ?>
+</ul>

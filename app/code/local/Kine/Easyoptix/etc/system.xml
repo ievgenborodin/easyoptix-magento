@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+		<kine translate="label">
+			<label>Easy Optix</label>
+			<sort_order>000</sort_order>
+		</kine>
+	</tabs>
+	<sections>
+		<kine translate="label">
+			<label>Pricing Module</label>
+			<tab>kine</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>1000</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<mygroup translate="label" module="easyoptix">
+					<label>Test Group</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>01</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<text_field translate="label">
+							<label>Input Text Field</label>
+							<comment>Hello</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>00</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</text_field>
+						<text_field2 translate="label">
+							<label>Input Text Field2</label>
+							<comment>Hello</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>01</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</text_field2>
+					</fields>
+				</mygroup>
+			</groups>
+		</kine>
+	</sections>
+</config>

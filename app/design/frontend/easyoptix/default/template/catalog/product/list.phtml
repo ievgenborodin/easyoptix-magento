@@ -1,0 +1,119 @@
+<?php
+/**
+ * Easy Optix
+ *
+ * @author      Ievgen Borodin
+ * @copyright   Copyright (c) 2016 EasyOptix Inc. (http://www.easy-optix.com)
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+
+?>
+<?php
+    $_productCollection = $this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+    $mediaApi = Mage::getModel('catalog/product_attribute_media_api');
+?>
+
+<?php if(!$_productCollection->count()): ?>
+    <div class="note-msg-empty-catalog">
+        <h3><?php echo $this->__('There are no products matching the selection.') ?></h3>        
+    </div>
+<?php else: ?>
+    <?php $_collectionSize = $_productCollection->count() ?>
+    <?php $img_helper = $this->helper('catalog/image'); ?>
+
+    <div class="fs-shifter"></div>
+    <div class="fs-wrap">
+        <div class="fs">
+
+            <div class="fs-left">
+                <div class="fs-filters-switch">
+                    <span id="filters-switch">Filter</span>
+                </div>
+                <div class="fs-filters-reset">
+                    <span id="filters-reset"><i class="fa fa-times"></i> reset filters</span>
+                </div>
+            </div>
+
+            <div class="fs-center">
+                <ul class="fs-filters-ul"></ul>
+            </div>
+
+            <div class="fs-right">
+                <div class="fs-title-wrap">
+                    <span class="fs-title"></span>
+                </div>
+                <div class="fs-counter">
+                    <span id="item-counter"></span> item(s)
+                </div>
+                <!-- <div class="fs-sort">
+                    <span id="sort-switch">Sort<i class="fa fa-angle-down"></i></span>
+                </div> -->
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="category-products">
+    <ul class="row product-rows">
+    <?php $i=0; foreach ($_productCollection as $_product): ?>
+        <li class="item col-xs-6 col-sm-4 col-lg-3" data-s="<?php echo $_product->getSortParams(); ?>">
+            <div class="product-container">
+                <a href="<?php echo $_product->getProductUrl() ?>" class="product-image">
+                    <span class="middle-helper"></span><img data-src="<?php echo $img_helper->init($_product, 'small_image'); ?>" class="product-img hid" id="<?php echo 'p-' . $_product->getId(); ?>" />
+                </a>
+                <div class="product-shop">
+                    <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
+                    <?php echo $this->getPriceHtml($_product, true) ?>
+                    <?php if($_product->getRatingSummary()): ?>
+                        <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                    <?php endif; ?>
+                    <div class="product-children">
+                        <ul>
+                        <?php $children_index=0; $curr_images = $mediaApi->items($_product->getId()); ?>
+                        <?php foreach($curr_images as $g_image) : ?>
+                            <?php $child_label = explode("_", $g_image['label']); ?>
+                            <?php if ($g_image['exclude'] == 1 && isset($child_label[1]) && $child_label[1] != $_product['brand_ext']) :?>
+                                <?php $children_index++; if ($children_index<4) : ?>
+                                <li class="product-child">
+                                    <img data-src="<?php echo $img_helper->init($_product, 'image', $g_image['file']); ?>" class="child-img hid" data-parent="<?php echo 'p-' . $_product->getId(); ?>">
+                                </li>
+                                <?php else :?>
+                                    <li class="children-plus">+</li>
+                                <?php break; endif; ?>
+                            <?php endif ?>
+                        <?php endforeach ?>
+                        </ul>
+                    </div>         
+                </div>
+            </div>
+        </li>
+    <?php endforeach ?>
+    </ul>
+</div>
+<?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

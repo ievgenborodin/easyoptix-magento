@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<layout version="1.0">
+  <easyoptix_product_index>
+    <block type="easyoptix/hi" name="root" />
+  </easyoptix_product_index>
+</layout>

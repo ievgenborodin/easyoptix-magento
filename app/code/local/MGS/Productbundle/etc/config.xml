@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <MGS_Productbundle>
+            <version>0.1.0</version>
+        </MGS_Productbundle>
+    </modules>
+    <admin>
+        <routers>
+			<productbundle>
+				<use>admin</use>
+				<args>
+					<module>MGS_Productbundle</module>
+					<frontName>productbundle</frontName>
+				</args>
+			</productbundle>
+        </routers>
+    </admin>
+    <adminhtml>
+		<menu>
+			<productbundle module="productbundle">
+				<title>Product Bundle</title>
+				<sort_order>80</sort_order>               
+				<children>
+					<export module="productbundle">
+						<title>Export to CSV</title>
+						<sort_order>0</sort_order>
+						<action>productbundle/adminhtml_productbundle/export</action>
+					</export>
+					<import module="productbundle">
+						<title>Import from CSV</title>
+						<sort_order>1</sort_order>
+						<action>productbundle/adminhtml_productbundle/index</action>
+					</import>
+				</children>
+			</productbundle>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<MGS_Productbundle>
+							<title>Productbundle Module</title>
+							<sort_order>10</sort_order>
+						</MGS_Productbundle>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<productbundle>
+					<file>productbundle.xml</file>
+				</productbundle>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <helpers>
+            <productbundle>
+                <class>MGS_Productbundle_Helper</class>
+            </productbundle>
+        </helpers>
+    </global>
+</config>
