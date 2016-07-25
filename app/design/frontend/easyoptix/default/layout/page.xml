@@ -51,22 +51,22 @@ Default layout, loads most of the pages
                 <action method="addItem"><type>skin_js</type><name>js/jquery.easing.1.3.js</name><params/></action>
                 <action method="addItem"><type>skin_js</type><name>js/jquery.mobile.customized.min.js</name><params/></action>
 
-                <action method="addItem"><type>skin_js</type><name>js/bootstrap.js</name><params/></action>     <!-- ?delete -->
-                <action method="addItem"><type>skin_js</type><name>js/jquery.carouFredSel-6.2.1.js</name><params/></action>
-                <action method="addItem"><type>skin_js</type><name>js/jquery.touchSwipe.js</name><params/></action>
+                <action method="addItem"><type>skin_js</type><name>js/bootstrap.min.js</name><params/></action>     <!-- ?delete -->
+                <action method="addItem"><type>skin_js</type><name>js/jquery.carouFredSel-6.2.1.min.js</name><params/></action>
+                <action method="addItem"><type>skin_js</type><name>js/jquery.touchSwipe.min.js</name><params/></action>
                
                 <action method="addItem"><type>skin_js</type><name>js/jquery.bxslider.min.js</name><params/></action>
-                <action method="addItem"><type>skin_js</type><name>js/tm-stick-up.js</name><params/></action>
+                <action method="addItem"><type>skin_js</type><name>js/tm-stick-up.min.js</name><params/></action>
+                <action method="addItem"><type>skin_js</type><name>js/camera.min.js</name><params/></action>
 
                 <block type="page/js_cookie" name="js_cookies" template="page/js/cookie.phtml"/>
                 <action method="addCss"><stylesheet>css/font-awesome.min.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/jquery.bxslider.css</stylesheet></action>
-                <action method="addCss"><stylesheet>css/photoswipe.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/photoswipe.min.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/bootstrap.min.css</stylesheet></action>
-                <action method="addCss"><stylesheet>css/extra_style.css</stylesheet></action>
-                <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
-                <action method="addCss"><stylesheet>css/responsive.css</stylesheet></action>
-                <action method="addCss"><stylesheet>css/camera.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/styles.min.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/responsive.min.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/camera.min.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/widgets.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/print.css</stylesheet><params>media="print"</params></action>
 

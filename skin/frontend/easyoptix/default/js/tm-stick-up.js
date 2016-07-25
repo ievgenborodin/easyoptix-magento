@@ -1,1 +1,61 @@
-!function(o){o.fn.tmStickUp=function(t){function e(){a=parseInt(n.offset().top),d=parseInt(n.css("margin-top")),u=parseInt(n.outerHeight(!0)),o('<div class="pseudoStickyBlock"></div>').insertAfter(n),s=o(".pseudoStickyBlock"),s.css({position:"relative",display:"block"}),c()}function c(){p.on("scroll",function(){r=o(this).scrollTop(),k=r>h?"down":"up",h=r,correctionValue=i.correctionSelector.outerHeight(!0),f=parseInt(l.scrollTop()),a-correctionValue<f?(n.addClass("isStuck"),n.css({position:"fixed",top:correctionValue}),s.css({height:u})):(n.removeClass("isStuck"),n.css({position:"relative",top:0}),s.css({height:0}))}).trigger("scroll")}var i={correctionSelector:o(".correctionSelector")};o.extend(i,t);var s,r,n=o(this),l=o(window),p=o(document),a=0,u=0,d=0,f=0,h=0,k="";e()}}(jQuery);
+(function($){
+	$.fn.tmStickUp=function(options){ 
+		
+		var getOptions = {
+			correctionSelector: $('.correctionSelector')
+		}
+		$.extend(getOptions, options); 
+
+		var
+			_this = $(this)
+		,	_window = $(window)
+		,	_document = $(document)
+		,	thisOffsetTop = 0
+		,	thisOuterHeight = 0
+		,	thisMarginTop = 0
+		,	thisPaddingTop = 0
+		,	documentScroll = 0
+		,	pseudoBlock
+		,	lastScrollValue = 0
+		,	scrollDir = ''
+		,	tmpScrolled
+		;
+
+		init();
+		function init(){
+			thisOffsetTop = parseInt(_this.offset().top);
+			thisMarginTop = parseInt(_this.css("margin-top"));
+			thisOuterHeight = parseInt(_this.outerHeight(true));
+
+			$('<div class="pseudoStickyBlock"></div>').insertAfter(_this);
+			pseudoBlock = $('.pseudoStickyBlock');
+			pseudoBlock.css({"position":"relative", "display":"block"});
+			addEventsFunction();
+		}//end init
+
+		function addEventsFunction(){
+			_document.on('scroll', function() {
+				tmpScrolled = $(this).scrollTop();
+					if (tmpScrolled > lastScrollValue){
+						scrollDir = 'down';
+					} else {
+						scrollDir = 'up';
+					}
+				lastScrollValue = tmpScrolled;
+
+				correctionValue = getOptions.correctionSelector.outerHeight(true);
+				documentScroll = parseInt(_window.scrollTop());
+
+				if(thisOffsetTop - correctionValue < documentScroll){
+					_this.addClass('isStuck');
+					_this.css({position:"fixed", top:correctionValue});
+					pseudoBlock.css({"height":thisOuterHeight});
+				}else{
+					_this.removeClass('isStuck');
+					_this.css({position:"relative", top:0});
+					pseudoBlock.css({"height":0});
+				}
+			}).trigger('scroll');
+		}
+	}//end tmStickUp function
+})(jQuery)

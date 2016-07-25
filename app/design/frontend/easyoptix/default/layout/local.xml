@@ -1,17 +1,17 @@
 <?xml version="1.0" enconding="UTF-8"?>
 <!-- 
 /**
- * local.xml
- * Local modifications for EasyOptix.us
- * @category	design
- * @package		easyoptix
- * @copyright	Copyright (c) 2016 Ievgen Borodin
+ * Easy Optix
+ *
+ * @author      Ievgen Borodin
+ * @copyright   Copyright (c) 2016 EasyOptix Inc. (http://www.easy-optix.com)
  */
  -->
  <layout version="0.0.1">
  <default>
-
- 	<reference name="left">
- 		<remove name="left.newsletter"/>
- 	</reference>
+ 	<reference name="head">
+      <!-- css -->
+      <action method="removeItem"><type>skin_css</type><name>css/responsive.css</name></action>
+      <action method="removeItem"><type>skin_css</type><name>css/style.css</name></action>
+   	</reference>
  </default>

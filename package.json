@@ -1,0 +1,26 @@
+{
+  "name": "easyoptix",
+  "version": "1.0.0",
+  "description": "Online Eyewear Company",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "company": "Easy Optix",
+  "author": "Ievgen Borodin",
+  "copyright": "Copyright (c) 2016 EasyOptix Inc. (http://www.easy-optix.com)",
+  "license": "ISC",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://easyopti@usm7.siteground.biz:18765/home/easyopti/public_html"
+  }
+}

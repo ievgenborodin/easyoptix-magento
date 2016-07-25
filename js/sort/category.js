@@ -5,4 +5,424 @@
  * @copyright   Copyright (c) 2016 EasyOptix Inc. (http://www.easy-optix.com)
  */
 
-jQuery(document).ready(function(){function u(a,b){var c,e=b.length,f="",g=h[a],i=g.label,j=g.type,k=g.parent?g.parent+" ":"",l=g.child?g.child+" ":"",m="",n="";if("boolean"===j)f='<li><div class="sort-btn boolean" data-value="1" data-code="'+a+'"><span>'+i+'<i class="fa fa-check" aria-hidden="true"></i></span></div></li>';else if("color"===j){if(e<2)return"";for(m+="<ul>",c=0;c<e;c++)n='style="background-color:'+b[c]+";color:"+b[c]+'"',m+='<li><div class="sort-btn color" data-value="'+b[c]+'" data-code="'+a+'"'+n+'><i class="fa fa-check" aria-hidden="true"></i></div></li>';m+="</ul>",f='<li><div class="sort-block-title"><span>'+i+'<i class="fa fa-angle-down"></i></span></div><div class="sort-block '+a+' animated-hide"><div class="sort-block-opts">'+m+"</div></div></li>"}else{if(e<2)return"";for(m+="<ul>",c=0;c<e;c++)m+='<li><div class="sort-btn '+l+k+'" data-value="'+b[c]+'" data-code="'+a+'"><i class="fa fa-check" aria-hidden="true"></i>'+b[c]+"</div></li>";m+="</ul>",f='<li><div class="sort-block-title"><span>'+i+'<i class="fa fa-angle-down"></i></span></div><div class="sort-block '+a+' animated-hide"><div class="sort-block-opts">'+m+"</div></div></li>"}return f}function v(a){var b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,r,t,y,z,A,B,q=[],s=[],w={},C=0;if(b=jQuery("li.item"),f=jQuery(".sort-btn-active"),f.length){b.addClass("hide"),f.each(function(){i=jQuery(this),m=i.data("code")+"",p=i.data("value")+"",w[m]||(w[m]=[]),a[m][p].forEach(function(a){-1==w[m].indexOf(a)&&w[m].push(a)})}),jQuery(".sort-btn.child").addClass("hide");for(l in w)c=jQuery(".sort-block."+l),c.hasClass("parent")?(n=c.data("child"),d=jQuery(".sort-block."+n),d.removeClass("animated-hide"),g=c.find(".sort-btn-active"),q=[],g.each(function(){j=jQuery(this),q.push(j.data("value"))}),h=d.find(".sort-btn"),h.each(function(){k=jQuery(this),r=k.data("parent"),-1!=q.indexOf(r)&&k.removeClass("hide")})):c.hasClass("child")&&(o=c.data("parent"),e=jQuery(".sort-block."+o),g=e.find(".sort-btn-active"),g.length||(c.find(".sort-btn.child").removeClass("sort-btn-active"),c.hasClass("animated-hide")||c.addClass("animated-hide"),delete w[l]));if(A=Object.keys(w),B=A.length,0==B)b.removeClass("hide");else if(1==B)s=w[A[0]];else for(y=w[A[0]],t=0,len=y.length;t<len;t++)z=y[t],x(s,w,A,z,C,t);s.each(function(a){b.eq(a).removeClass("hide")})}else b.removeClass("hide");jQuery(".sort-btn-active").length?jQuery("#filters-reset").css("display","block"):jQuery("#filters-reset").css("display","none"),jQuery("#item-counter").html(jQuery(".item").not(".hide").length)}function w(a){var c,b=jQuery(".active-filter");b.not(a).each(function(){c=jQuery(this),0==c.siblings().addClass("animated-hide").stop(!0,!0).slideUp(200).find(".sort-btn-active").length&&c.removeClass("active-filter")})}function x(a,b,c,d,e,f){var g;e+1<c.length?(g=b[c[e+1]],-1!=g.indexOf(d)&&(e++,x(a,b,c,d,e,f))):a.push(d)}function B(){{var a=jQuery(".item").filter(function(){return jQuery(this).position().top+z<A+jQuery(window).scrollTop()});a.find(".product-img.hid").each(function(){var c=jQuery(this);c.attr("src",c.data("src")).removeClass("hid")}),a.find(".child-img.hid").each(function(){var c=jQuery(this);c.attr("src",c.data("src")).removeClass("hid")})}}var b,c,d,e,a=jQuery(".product-rows > li.item"),f={},h={eyewear_type:{label:"Type",type:"string",urlRule:/sunglasses|eyeglasses/i},prescription_ready:{label:"Prescription Ready",type:"boolean",urlRule:/prescription\-sunglasses|eyeglasses/i},department:{label:"Gender",type:"string",urlRule:/men|women|miu-miu/i},style:{label:"Shape",type:"string",urlRule:/style/i},brand:{label:"Brand",type:"string",urlRule:/brand/i},brand_model:{label:"Model",type:"string"},brand_ext:{label:"Ext",type:"string"},frame_material:{label:"Frame Material",type:"string"},lens_material:{label:"Lens Material",type:"string",urlRule:/eyeglasses/i},colors:{label:"Colors",type:"color"},polarized:{label:"Polarized",type:"boolean",urlRule:/eyeglasses/i},lens_width:{label:"Lens Width",type:"string"}};for(d in h)f[d]=[];jQuery.each(a,function(a,b){e=b.dataset.s.split("*"),a=0;for(d in f)f[d].push(e[a]),a++});var i=jQuery("document").context.URL;for(var j in h){var l,k=h[j].urlRule;k&&(l=i.match(k)?!0:!1,l&&delete f[j])}delete f.brand_ext;var d,b,c,m,n,o,p,r,q="",t=f.frame_material.length;for(d in f){for(m=[],n=f[d],r=[],b=0;b<t;b++)if(o=n[b],p=o.split(","),p.length>1)for(c=0;c<p.length;c++)"r"!=p[c]&&(-1===m.indexOf(p[c])?(m.push(p[c]),r[p[c]]=[b]):r[p[c]].push(b));else"r"!=o&&(-1===m.indexOf(o)?(m.push(o),r[o]=[b]):r[o].push(b));f[d]=r,q+=u(d,m.sort())}jQuery(".fs-filters-ul").html(q),jQuery(".sort-btn").on("click",function(){jQuery(this).toggleClass("sort-btn-active"),v(f),0!=jQuery(".product-img.hid").length&&B()}),jQuery(".sort-block-title").on("click",function(){w(jQuery(this)),jQuery(this).addClass("active-filter").siblings().toggleClass("animated-hide").stop(!0,!0).slideToggle(200)}),jQuery("#filters-reset").on("click",function(){jQuery(".sort-btn-active").removeClass("sort-btn-active"),w(jQuery(this)),v(f)}),jQuery("#filters-switch").on("click",function(){var b=jQuery(this);b.toggleClass("active"),b.hasClass("active")?(jQuery(".fs-filters-reset").css("display","block"),jQuery(".fs-center").css("display","block")):(jQuery(".fs-filters-reset").css("display","none"),jQuery(".fs-center").css("display","none"))});var y=jQuery(window).height(),z=jQuery(".item").height(),A=y+z,C=jQuery(window),D=jQuery(".fs-wrap");B(),C.scrollTop()>155?D.addClass("fix"):D.removeClass("fix"),jQuery("#item-counter").html(jQuery(".item").not(".hide").length);var E=0;C.scroll(function(){var a=jQuery(this).scrollTop(),b=jQuery(".product-img.hid").length;a>155?D.addClass("fix"):D.removeClass("fix"),a-E>150&&0!=b&&(E=a,B())});var F=new Image;jQuery(".child-img").hover(function(){var c,b=jQuery(this);c=jQuery("#"+b.data("parent")),F.src=c.attr("src"),c.attr("src",b.attr("src")).addClass("slowFade")},function(){var c,b=jQuery(this);c=jQuery("#"+b.data("parent")),c.attr("src",F.src).removeClass("slowFade")})});
+jQuery(document).ready(function(){
+ 
+    // init values arrays
+    var itemsList = jQuery('.product-rows > li.item'), i, j, l, attr,
+    secList = {}, sortSections = {},
+    filters = {
+        'eyewear_type': { 
+            'label': 'Type', 
+            'type': 'string',
+            'urlRule': /sunglasses|eyeglasses/i
+        }, 
+        'prescription_ready': { 
+            'label': 'Prescription Ready', 
+            'type': 'boolean',
+            'urlRule': /prescription\-sunglasses|eyeglasses/i 
+        }, 
+        'department': { 
+            'label': 'Gender', 
+            'type': 'string',
+            'urlRule': /men|women|miu-miu/i 
+        }, 
+        'style': { 
+            'label': 'Shape',               
+            'type': 'string',
+            'urlRule': /style/i 
+        }, 
+        'brand': { 
+            'label': 'Brand',               
+            'type': 'string',
+            'urlRule': /brand/i 
+        }, 
+        'brand_model': { 
+            'label': 'Model',               
+            'type': 'string' 
+        }, 
+        'brand_ext': { 
+            'label': 'Ext',               
+            'type': 'string' 
+        }, 
+        'frame_material': { 
+            'label': 'Frame Material',      
+            'type': 'string' 
+        }, 
+        'lens_material': { 
+            'label': 'Lens Material',       
+            'type': 'string',
+            'urlRule': /eyeglasses/i 
+        }, 
+        'colors': { 
+            'label': 'Colors',              
+            'type': 'color' 
+        }, 
+        'polarized': { 
+            'label': 'Polarized',           
+            'type': 'boolean',
+            'urlRule': /eyeglasses/i 
+        }, 
+        'lens_width': { 
+            'label': 'Lens Width',          
+            'type': 'string' 
+        } 
+    };
+
+    // set lists keys 
+    for (l in filters)
+        secList[l] = [];
+    // set lists values
+
+    jQuery.each(itemsList, function(i, el){
+        attr = el.dataset.s.split('*'); i=0;
+        for (l in secList)
+        { 
+            secList[l].push(attr[i]);
+            i++;
+        }
+    });
+
+    // filtering sorting sections (based on url)
+    var url = jQuery('document').context.URL;
+
+    for(var c in filters){
+        var rule = filters[c]['urlRule'], apply;
+        if (rule){
+            apply = (url.match(rule)) ? true : false;
+            (apply) && delete secList[c];
+        }
+    };
+    delete secList['brand_ext'];
+
+    var l, i, j, list, currList, currItem, split, html='', newList,be,
+    itemsLength = secList['frame_material'].length;
+
+    for (l in secList){
+        list = [];
+        currList = secList[l];
+        newList = [];
+
+        for (i=0; i<itemsLength; i++){
+            currItem = currList[i];
+            split = (currItem.split(','));
+            if (split.length > 1) { // 'Red,Blue'
+                for (j=0; j<split.length; j++)  
+                    if (split[j] != 'r')                  
+                        if (list.indexOf(split[j]) === -1) {
+                            list.push(split[j]);
+                            newList[split[j]] = [i];
+                        } else 
+                            newList[split[j]].push(i);
+            } else {  // 'Red', ''
+                if (currItem != 'r')
+                    if (list.indexOf(currItem) === -1) {
+                        list.push(currItem);
+                        newList[currItem] = [i];
+                    } else {
+                        newList[currItem].push(i);  }
+            }
+        }
+        secList[l] = newList;
+        html += addSortButtons(l, list.sort());     
+    }
+    jQuery('.fs-filters-ul').html(html);
+
+
+    function addSortButtons (code, list)
+    {
+        var i, j, length =list.length,
+        html = '',
+        filter = filters[code],
+        label = filter['label'], 
+        type = filter['type'],
+        parent = (filter['parent']) ? filter['parent'] + ' ' : '',
+        child = (filter['child']) ? filter['child'] + ' ' : '',
+        btns = '', backColor = '', value = '';
+        
+        if (type==='boolean') {
+            html = '<li><div class="sort-btn boolean" data-value="1" data-code="'+ code +'"><span>' + label + '<i class="fa fa-check" aria-hidden="true"></i></span></div></li>';
+        } else if (type==='color'){
+            if (length<2) return '';
+            btns += '<ul>'; 
+            for (i=0; i<length; i++)
+            {
+                backColor = 'style="background-color:' + list[i] + ';color:' + list[i] + '"';
+                btns += '<li><div class="sort-btn color" data-value="' + list[i] + '" data-code="'+ code +'"' + backColor + '><i class="fa fa-check" aria-hidden="true"></i></div></li>';
+            }
+            btns += '</ul>';
+            html = '<li><div class="sort-block-title"><span>' + label + '<i class="fa fa-angle-down"></i></span></div><div class="sort-block ' + code + ' animated-hide"><div class="sort-block-opts">'+ btns +'</div></div></li>';
+        } else {
+            if (length<2) return '';
+            btns += '<ul>'; 
+            for (i=0; i<length; i++)
+            {
+                btns += '<li><div class="sort-btn ' + child + parent + '" data-value="' + list[i] + '" data-code="'+ code +'"><i class="fa fa-check" aria-hidden="true"></i>' + list[i] + '</div></li>';
+            }
+            btns += '</ul>';
+            html = '<li><div class="sort-block-title"><span>' + label + '<i class="fa fa-angle-down"></i></span></div><div class="sort-block ' + code + ' animated-hide"><div class="sort-block-opts">'+ btns +'</div></div></li>';
+        }
+        return html;
+    }
+
+    // click event
+    jQuery('.sort-btn').on('click', function (e){
+        jQuery(this).toggleClass('sort-btn-active');
+        
+        filterItems(secList);
+        if (jQuery('.product-img.hid').length != 0) 
+                getVisibles();
+    });
+
+    function filterItems(list) {
+        // used vars
+        var itemsList, 
+            filterBlock, childFilterBlock, parentFilterBlock,
+            activeBtns, parentActiveBtns, childBtns, btn, pBtn, cBtn,
+            code, attrCode, childCode, parentCode,
+            attrValue, parentValuesArr = [], childParentValue,
+            indexArr = [], i, j, indx,  indexPools = {}, firstPoolArr, currIndex,
+            filterRules, rulesLength, r = 0;
+
+        // get list of all items
+        itemsList = jQuery('li.item');
+
+        // get list of all active buttons
+        activeBtns = jQuery('.sort-btn-active');
+
+        if (activeBtns.length){ 
+
+            // hide all items 
+            itemsList.addClass('hide');
+
+            activeBtns.each(function (i, v){
+                btn = jQuery(this);
+                attrCode = btn.data('code')+'';    
+                attrValue = btn.data('value')+''; 
+
+                // check if pool exists
+                if (!indexPools[attrCode])
+                    indexPools[attrCode] = [];
+
+                //[3,2,5].forEach(function(n){ if(arr.indexOf(n)==-1) arr.push(n) }); 
+
+                list[attrCode][attrValue].forEach(function(j){ 
+                    (indexPools[attrCode].indexOf(j) == -1) && indexPools[attrCode].push(j);
+                });
+            });
+
+                // hide all child sort buttons 
+                jQuery('.sort-btn.child').addClass('hide');
+
+                // for each indexPool 
+                for (code in indexPools){
+                    filterBlock = jQuery('.sort-block.' + code);
+                    if (filterBlock.hasClass('parent')){
+                        childCode = filterBlock.data('child');
+                        childFilterBlock = jQuery('.sort-block.' + childCode);
+
+                        // show child block
+                        childFilterBlock.removeClass('animated-hide');
+
+                        // get array of parent active buttons
+                        parentActiveBtns = filterBlock.find('.sort-btn-active');
+                        
+                        // get array of parent active buttons values
+                        parentValuesArr = [];
+                        parentActiveBtns.each(function(i, v){
+                            pBtn = jQuery(this);
+                            parentValuesArr.push(pBtn.data('value'));
+                        })
+                        
+                        // get all child sort buttons
+                        childBtns = childFilterBlock.find('.sort-btn');
+                        
+                        // loop through child buttons, get data-parent value, check indexOf "d-p v" 
+                        // in parentValuesArr, if not -1 hide child button
+                        childBtns.each(function(i, v){
+                            cBtn = jQuery(this);
+                            childParentValue = cBtn.data('parent');
+                            if (parentValuesArr.indexOf(childParentValue) != -1)
+                                cBtn.removeClass('hide');
+                        });
+                    } else if (filterBlock.hasClass('child')) { 
+                        // find his parent
+                        parentCode = filterBlock.data('parent'); 
+                        parentFilterBlock = jQuery('.sort-block.' + parentCode);
+                        parentActiveBtns = parentFilterBlock.find('.sort-btn-active');
+                        // if no parent found 
+                        
+                        if (!parentActiveBtns.length) { 
+                            // release child active buttons
+                            filterBlock.find('.sort-btn.child').removeClass('sort-btn-active');
+                            // hide child block
+                            if (!filterBlock.hasClass('animated-hide')) {
+                                filterBlock.addClass('animated-hide');
+                            }
+                            // delete indexPools[code]
+                            delete indexPools[code];
+                        }                        
+                    }
+                };
+
+            // get list of filter categories (rules)
+            filterRules = Object.keys(indexPools);
+            rulesLength = filterRules.length;
+            if (rulesLength == 0) {
+                itemsList.removeClass('hide');
+            }
+            else if (rulesLength == 1) {
+                indexArr = indexPools[filterRules[0]];
+            }
+            else {
+                firstPoolArr = indexPools[filterRules[0]];
+                for (i=0, len=firstPoolArr.length; i<len; i++){
+                    currIndex = firstPoolArr[i];
+                    compareRules(indexArr, indexPools, filterRules, currIndex, r, i);
+                }
+            }
+
+            // show necessary items
+            indexArr.each(function (i){
+                itemsList.eq(i).removeClass('hide');
+            });
+
+        } else { 
+            // if no filters applied - show all items
+            itemsList.removeClass('hide');
+        }
+        
+        // show reset button
+        if (jQuery('.sort-btn-active').length) 
+            jQuery('#filters-reset').css('display', 'block');
+        else 
+            jQuery('#filters-reset').css('display', 'none');
+
+        // count visibles
+        jQuery('#item-counter').html( jQuery('.item').not('.hide').length );
+    }
+
+    function checkActiveFilters(current){
+        var activeFilters = jQuery('.active-filter'), that;
+
+        activeFilters.not(current).each(function(){
+            that = jQuery(this);
+            (that.siblings().addClass('animated-hide').stop(true, true).slideUp(200).find('.sort-btn-active').length == 0) && that.removeClass('active-filter');
+        });
+    }
+
+    function compareRules(indexArr, indexPools, filterRules, currIndex, r, i){
+        var nextPoolArr;
+
+        if (r + 1 < filterRules.length)
+        {
+            nextPoolArr = indexPools[filterRules[r+1]];
+
+            if (nextPoolArr.indexOf(currIndex) != -1)
+            {
+                r++;
+                compareRules(indexArr, indexPools, filterRules, currIndex, r, i);
+            }
+        }
+        else 
+        {
+            indexArr.push(currIndex);
+        }
+    }
+
+    jQuery('.sort-block-title').on('click', function(e){
+        checkActiveFilters(jQuery(this));
+        jQuery(this).addClass('active-filter')
+            .siblings().toggleClass('animated-hide').stop(true, true).slideToggle(200);
+    });
+
+    jQuery('#filters-reset').on('click', function(e){
+        jQuery('.sort-btn-active').removeClass('sort-btn-active');
+        checkActiveFilters(jQuery(this));
+        filterItems(secList);
+    });
+
+    jQuery('#filters-switch').on('click', function(e){
+        var that = jQuery(this);
+        that.toggleClass('active');
+        if (that.hasClass('active')) {
+            jQuery('.fs-filters-reset').css('display','block');
+            jQuery('.fs-center').css('display','block');            
+        } else {
+            jQuery('.fs-filters-reset').css('display','none');
+            jQuery('.fs-center').css('display','none');
+        }
+    });
+
+    // vars
+    var wh = jQuery(window).height(),
+        ih = jQuery('.item').height(),
+        wih = wh + ih;
+
+    function getVisibles() {
+       // var leftHidden = jQuery('.product-img.hid').length + jQuery('.child-img.hid').length; console.log(leftHidden);
+        var items = jQuery('.item').filter(function(index){
+            return (jQuery(this).position().top + ih) < (wih + jQuery(window).scrollTop());
+        });
+
+        var baseImages = items.find('.product-img.hid')
+            .each(function(i, v){
+                var that = jQuery(this);
+                that.attr('src', that.data('src')).removeClass('hid');
+            });
+
+        var childImages = items.find('.child-img.hid')
+            .each(function(i, v){
+                var that = jQuery(this);
+                that.attr('src', that.data('src')).removeClass('hid');
+            });
+    };
+
+    var theWindow = jQuery(window),
+        fsWrap = jQuery('.fs-wrap');
+
+    // first auto start
+    getVisibles();
+    if (theWindow.scrollTop()>155)
+        fsWrap.addClass('fix');
+    else 
+        fsWrap.removeClass('fix');
+    jQuery('#item-counter').html( jQuery('.item').not('.hide').length );
+
+    var lastScroll = 0;
+    theWindow.scroll(function() {
+    	var scrol = jQuery(this).scrollTop(),
+    	invisibles = jQuery('.product-img.hid').length;
+        if (scrol>155)
+            fsWrap.addClass('fix');
+        else 
+            fsWrap.removeClass('fix');
+        if (scrol - lastScroll > 150 && invisibles != 0){
+        	lastScroll = scrol;
+        	getVisibles(); console.log("executed");
+        }
+        /*// set timer to end interval
+        clearTimeout(jQuery.data(this, 'scrollTimer'));
+        jQuery.data(this, 'scrollTimer', setTimeout(function() {
+            if () 
+                getVisibles(); 
+        }, 50));*/
+    });
+
+    var tempImg = new Image();
+    jQuery('.child-img').hover(function(e){
+        var that = jQuery(this), parent;
+        parent = jQuery('#' + that.data('parent'));
+        tempImg.src =  parent.attr('src');
+        parent
+            .attr('src', that.attr('src'))
+            .addClass('slowFade');
+    }, function(e){
+        var that = jQuery(this), parent;
+        parent = jQuery('#' + that.data('parent'));
+        parent
+            .attr('src', tempImg.src)
+            .removeClass('slowFade');
+        
+    });    
+
+});
