@@ -311,7 +311,7 @@
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.page{ max-width: 1000px;}
-	.product-view .product-shop {width:53%;}
+	.product-view .product-shop {width:50%;}
 	.product-view .addthis_button_tweet {width:95px;}
 	.addthis_default_main .addthis_counter {clear:left;}
 	.addthis_mini_style .addthis_counter {clear:inherit;}

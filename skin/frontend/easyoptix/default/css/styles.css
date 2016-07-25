@@ -2013,7 +2013,6 @@ img.big { padding: 30px; }
 .tags-list li { display:inline; font-size:15px; line-height:normal; margin-right:10px; }
 
 /* Advanced Search */
-.advanced-search {}
 .advanced-search + .buttons-set {max-width: 340px;}
 .advanced-search-amount {margin-bottom:5px;}
 .advanced-search-summary {padding:15px 0;}
@@ -3157,7 +3156,7 @@ h3 { font-size: 18px; line-height: 2; }
   .points-banner-wrap { height: 300px; }
   .eyewear-instagram-wrap { margin: 3em 0; }
   .instagram-cols { width: 70%; margin: 0 15%; }
-  .eyewear-couponletter-wrap { margin: 2em 0 7em; }
+  .eyewear-couponletter-wrap { margin: 2em 0 -2em; }
   .couponletter-left { width: 42%; margin: 0; }
   .couponletter-left > img { padding: 5em 3em 2em 4em; }
   .couponletter-right { width: 58%; }
