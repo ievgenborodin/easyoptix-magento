@@ -256,7 +256,7 @@ _Draft_;
 						
 						$frame_children_sku = $frame->getData('children_sku');
 
-						$categories_ids = explode(',', $data_csv[3]);
+						$categories_ids = (count($frame_children_sku)) ? explode(',', $data_csv[3]) : array();
 
 						if ($frame->getData('model_parent'))
 						{
@@ -314,10 +314,10 @@ _Draft_;
 							'lens_width' => $frame->getData('lens_width'),
 							'lens_material' => $frame->getData('lens_material'),
 							'colors' => $frame->getData('colors'),
-                                             'meta_title' => $frame->getData('meta_title'),
-                                             'meta_keyword' => $frame->getData('meta_keyword'),
-                                             'meta_description' => $frame->getData('meta_description'),
-                                             'sort_params' => $frame->getData('sort_params'),
+                            'meta_title' => $frame->getData('meta_title'),
+                            'meta_keyword' => $frame->getData('meta_keyword'),
+                            'meta_description' => $frame->getData('meta_description'),
+                            'sort_params' => $frame->getData('sort_params'),
 							'polarized' => $frame->getData('polarized'),
 							'model_parent' => $frame->getData('model_parent'),
 							'children_sku' => $children_sku_new,
