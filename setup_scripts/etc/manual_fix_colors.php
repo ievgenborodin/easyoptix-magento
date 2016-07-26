@@ -1,9 +1,11 @@
 <?php
   /* version 0.01 */
 
-  $host = 'https://easy-optix.com/index.php/api/soap/?wsdl';
+  $host = 'http://localhost/public_html/index.php';//'https://easy-optix.com/index.php';
   $user = 'kine';
-  $pass = 'bClinton1923';
+  $pass = '3473309500';//'bClinton1923';
+  
+  $host .= '/api/soap/?wsdl';
 
   $colors_list = array(
     'blue', 'bronze', 'beige','brown','black', 'burgundy',

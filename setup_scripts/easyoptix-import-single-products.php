@@ -10,12 +10,14 @@
   // ================
 
   // web service access
-  $magento_webserver = 'https://easy-optix.com/index.php/api/soap/?wsdl';
-  $magento_user = 'kine';
-  $magento_pass = 'bClinton1923';
+  $host = 'http://localhost/public_html/index.php';//'https://easy-optix.com/index.php';
+  $user = 'kine';
+  $pass = '3473309500';//'bClinton1923';
+  
+  $host .= '/api/soap/?wsdl';
 
   // database file
-  $csv_file = 'rb-eye-left.csv';//'mj.csv';
+  $csv_file = 'db_csv/testing.csv';//'rb-eye-left.csv';
 
   // first label name (to avoid using header row)
   $header_first_name = 'SKU';
@@ -50,8 +52,8 @@
   // soap connection
   // ================
   try {
-    $client = new SoapClient($magento_webserver);
-  	$session_id = $client->login($magento_user, $magento_pass);
+    $client = new SoapClient($host);
+  	$session_id = $client->login($user, $pass);
   	echo "Soap client connected!\n";
 
   } catch (SoapFault $fault) {

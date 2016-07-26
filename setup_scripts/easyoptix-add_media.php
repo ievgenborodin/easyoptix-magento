@@ -5,10 +5,12 @@
   */
 
   // web service access
-  $magento_webserver = 'https://easy-optix.com/index.php/api/soap/?wsdl';
-  $magento_user = 'kine';
-  $magento_pass = 'bClinton1923';
+  $host = 'http://localhost/public_html/index.php';//'https://easy-optix.com/index.php';
+  $user = 'kine';
+  $pass = '3473309500';//'bClinton1923';
   
+  $host .= '/api/soap/?wsdl';
+
   // image path & extension
   $images_folder = 'db_photos';
   $image_type = '.jpg';  
@@ -23,8 +25,8 @@
   // soap connection
   // ================
   try {
-    $client = new SoapClient($magento_webserver);
-  	$session_id = $client->login($magento_user, $magento_pass);
+    $client = new SoapClient($host);
+  	$session_id = $client->login($user, $pass);
   	echo "Soap client connected!\n";
 
   } catch (SoapFault $fault) {

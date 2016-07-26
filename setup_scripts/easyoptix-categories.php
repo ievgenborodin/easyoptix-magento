@@ -4,10 +4,16 @@
     need to add title, change names
   ==========*/
 
-  $client = new SoapClient('https://easy-optix.com/index.php/api/soap/?wsdl');
+  $host = 'http://localhost/public_html/index.php';//'https://easy-optix.com/index.php';
+  $user = 'kine';
+  $pass = '3473309500';//'bClinton1923';
+  
+  $host .= '/api/soap/?wsdl';
+
+  $client = new SoapClient($host);
 
   try {
-  	$session_id = $client->login('kine', 'bClinton1923');
+  	$session_id = $client->login($user, $pass);
   	echo "connected";
 
   	/*
@@ -284,7 +290,7 @@
   		'is_active' => '1'
   	);
 
-  	echo "<p>Predata. done</p>";
+  	echo "\nPredata. done";
 
   	/* Men sections */
 
@@ -308,7 +314,7 @@
   	$client->call($session_id, 'catalog_category.create', array($men_brands_id, $brands_dior_params));
   	$client->call($session_id, 'catalog_category.create', array($men_brands_id, $brands_mauijim_params));
   	$client->call($session_id, 'catalog_category.create', array($men_brands_id, $brands_givenchy_params));
-  	echo "<p>Men sections. done</p>";
+  	echo "\nMen sections. done";
 
   	/* Women sections */
 
@@ -334,7 +340,7 @@
   	$client->call($session_id, 'catalog_category.create', array($women_brands_id, $brands_mauijim_params));
   	$client->call($session_id, 'catalog_category.create', array($women_brands_id, $brands_miumiu_params));
   	$client->call($session_id, 'catalog_category.create', array($women_brands_id, $brands_givenchy_params));
-  	echo "<p>Women sections. done</p>";
+  	echo "\nWomen sections. done";
 
 
   	/* Brands sections */
@@ -345,7 +351,7 @@
   	$client->call($session_id, 'catalog_category.create', array($brands_id, $brands_dior_params));
   	$client->call($session_id, 'catalog_category.create', array($brands_id, $brands_mauijim_params));
   	$client->call($session_id, 'catalog_category.create', array($brands_id, $brands_givenchy_params));
-  	echo "<p>Brands sections. done</p>";
+  	echo "\nBrands sections. done";
 
 
   	/* Styles sections */
@@ -358,7 +364,7 @@
   	$client->call($session_id, 'catalog_category.create', array($styles_id, $styles_wayfarer_params));
   	$client->call($session_id, 'catalog_category.create', array($styles_id, $styles_rectangular_params));
   	$client->call($session_id, 'catalog_category.create', array($styles_id, $styles_cateye_params));
-  	echo "<p>Styles sections. done</p>";
+  	echo "\nStyles sections. done";
 
 
 	/* Sale sections */
@@ -366,10 +372,10 @@
   	$sale_id = $client->call($session_id, 'catalog_category.create', array('2', $sale_params));
   	$client->call($session_id, 'catalog_category.create', array($sale_id, $sale_men_params));
   	$client->call($session_id, 'catalog_category.create', array($sale_id, $sale_women_params));
-  	echo "<p>Sale sections. done</p>";
+  	echo "\nSale sections. done";
 
     $client->endSession($session_id);
-  	echo "<br><p>done</p>";
+  	echo "<br>\ndone";
   } catch (SoapFault $fault) {
   	echo 'Fault code:'.$fault->faultcode.'<br>';
   	echo 'Fault reason:'.$fault->faultstring;

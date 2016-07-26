@@ -4,10 +4,16 @@
    *  version: 1.0.0
   **/
 
-  $client = new SoapClient('https://easy-optix.com/index.php/api/soap/?wsdl');
+  $host = 'http://localhost/public_html/index.php';//'https://easy-optix.com/index.php';
+  $user = 'kine';
+  $pass = '3473309500';//'bClinton1923';
+  
+  $host .= '/api/soap/?wsdl';
+
+  $client = new SoapClient($host);
 
   try {
-    $session_id = $client->login('kine', 'bClinton1923');
+    $session_id = $client->login($user, $pass);
     echo "connected\n";
 
   } catch (SoapFault $fault) {
