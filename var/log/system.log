@@ -405,3 +405,6 @@
 2016-07-19T09:01:58+00:00 DEBUG (7): is_readable() expects parameter 1 to be a valid path, string given/home/easyopti/public_html/lib/Varien/Io/File.php
 2016-07-19T09:02:00+00:00 DEBUG (7): is_readable() expects parameter 1 to be a valid path, string given/home/easyopti/public_html/lib/Varien/Io/File.php
 2016-07-19T09:02:01+00:00 DEBUG (7): is_readable() expects parameter 1 to be a valid path, string given/home/easyopti/public_html/lib/Varien/Io/File.php
+2016-07-26T17:43:06+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-07-26T17:43:06+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-07-26T17:43:06+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
