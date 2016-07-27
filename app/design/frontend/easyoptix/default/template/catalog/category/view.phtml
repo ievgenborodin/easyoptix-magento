@@ -9,16 +9,18 @@
 <?php
     $_helper    = $this->helper('catalog/output');
     $_category  = $this->getCurrentCategory();
+    $_cat_title = $_helper->categoryAttribute($_category, $_category->getName(), 'name');
 ?>
 
 <div class="category-header">
     <div class="category-image-wrap">
+        <span class="category-minititle"><?php echo $_cat_title ?></span>
         <?php if($_imgUrl = $_category->getImageUrl()): ?>
             <?php echo $_helper->categoryAttribute($_category, "<p class='category-image'><img src=" . $_imgUrl . "></p>", 'image') ?>
         <?php endif; ?>
     </div>
     <div class="category-title-wrap">
-        <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+        <h1><?php echo $_cat_title ?></h1>
     </div>
 </div>
 

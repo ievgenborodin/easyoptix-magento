@@ -64,8 +64,8 @@ Default layout, loads most of the pages
                 <action method="addCss"><stylesheet>css/jquery.bxslider.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/photoswipe.min.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/bootstrap.min.css</stylesheet></action>
-                <action method="addCss"><stylesheet>css/styles.min.css</stylesheet></action>
-                <action method="addCss"><stylesheet>css/responsive.min.css</stylesheet></action>
+                <action method="addCss"><stylesheet>css/styles.min.css</stylesheet></action><!-- min -->
+                <action method="addCss"><stylesheet>css/responsive.min.css</stylesheet></action><!-- min -->
                 <action method="addCss"><stylesheet>css/camera.min.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/widgets.css</stylesheet></action>
                 <action method="addCss"><stylesheet>css/print.css</stylesheet><params>media="print"</params></action>

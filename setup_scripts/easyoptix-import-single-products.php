@@ -464,8 +464,9 @@
            $updating_data['url_key'] = strtolower( $brand_model );
            $diff_model_arr[$unique_model] = $newSku;
           }
-          $new_children_sku = $old_children_sku . ' ' . $sku;
-          $updating_data['children_sku'] = $new_children_sku;
+
+          // check if this sku in array
+          $updating_data['children_sku'] = (!in_array($sku, explode(' ', $old_children_sku))) ? $old_children_sku . ' ' . $sku : $old_children_sku;
           
           // update values
           $client->call($session_id, 'catalog_product.update', array($tempSku, $updating_data));

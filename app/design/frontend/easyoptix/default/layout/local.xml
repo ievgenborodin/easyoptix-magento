@@ -10,7 +10,6 @@
  <layout version="0.0.1">
  <default>
  	<reference name="head">
-      <!-- css -->
       <action method="removeItem"><type>skin_css</type><name>css/responsive.css</name></action>
       <action method="removeItem"><type>skin_css</type><name>css/style.css</name></action>
    	</reference>

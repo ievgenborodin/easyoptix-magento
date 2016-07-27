@@ -42,22 +42,6 @@ p {margin: 0;}
 }
 .main-container .data-table .label {display: table-cell;}
 .main-container .radio, .main-container .checkbox {display: inline-block; margin-top: 0;}
-@media (min-width: 1200px) { 
-   .container {
-    max-width: 1200px;
-    width: 1200px;
-  }
-}
-@media only screen and (min-width: 768px) {
-    span.toggle {display: none;}
-    .footer-col-content,
-    .block .block-content,
-    .box-collateral-content {
-      height: 100% !important;
-      display: block !important;
-      opacity: 1!important;
-    }
-}
 
 
 * { margin:0; padding:0; }
@@ -508,7 +492,7 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 .category-image-wrap,
 .category-title-wrap { display:block; width: 50%; overflow:hidden; float:left; height: 130px; }
 .category-image-wrap img { margin: auto;  }
-.category-title-wrap h1 { background-color: #000; color: #eee; vertical-align: middle; line-height: 130px; font-size: 2.2em; padding-left: 28px; }
+.category-title-wrap h1 { margin-top: 0; background-color: #000; color: #eee; vertical-align: middle; line-height: 130px; font-size: 2.2em; padding-left: 28px; }
 
 .page-title h1,
 .page-title h2 {
@@ -573,6 +557,7 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 .sort-section-body ul { padding:0; text-align: center; display: inline-block;}
 .sort-section-body ul li { float: left; padding: 5px 20px; color: #777; cursor: pointer; }
 
+.category-minititle { display: none; position:absolute; right: 5px; bottom: 5px; color: #fff; z-index: 40; }
 
 /*new fs*/
 .fs-shifter { width: 100%; display: inline-block; height: 45px;  }
@@ -1768,14 +1753,6 @@ img.big { padding: 30px; }
 }
 .product-view .bx-controls-direction > a.bx-prev {left: -50px; }
 .product-view .bx-controls-direction > a.bx-next {right: -50px; left: auto; }
-@media only screen and (max-width: 767px) {
-	.ps-phone .product-view .gallery-swipe-content {display: block;}
-	.ps-phone .product-view .product-box-customs .product-image,
-	.ps-phone .product-view .product-box-customs .more-views {display: none;}
-	.product-view .product-img-box .product-image span {z-index: 9999;}
-	.product-view .bx-controls-direction > a:before {content:"\f053"; font-size: 20px; }
-	.product-view .bx-controls-direction > a.bx-next:before {content: "\f054";}
-}
 
 .product-image-popup { margin:0 auto; }
 .product-image-popup .buttons-set { float:right; clear:none; border:0; margin:0; padding:0; }
@@ -2894,7 +2871,7 @@ img.big { padding: 30px; }
 .eyewear-sides > div { position: relative; background-size:cover; float:left; }
 .eyeglasses { background: url(../images/eyewear-eyeglasses.jpg) 0 0 no-repeat; }
 .sunglasses { margin-left: .5%; background: url(../images/eyewear-sunglasses.jpg) 0 0 no-repeat; }
-.eyewear-sides-inner { position: absolute; bottom: 0; left: 0%; width: 100%; height: 30%; text-align: center; }
+.eyewear-sides-inner { position: absolute; bottom: 0; left: 0%; width: 100%; height: 41%; text-align: center; }
 .eyewear-sides-inner > h2 { text-shadow: -1px -1px .5px #aaa; color: #ffffff; font-size: 3em; cursor: default; }
 .eyewear-sides-inner > .ez-btn {  }
 .eyewear-sides-inner > .ez-btn:hover { border: 1px solid #fff; color: #fff; }
@@ -3079,140 +3056,6 @@ h3 { font-size: 18px; line-height: 2; }
 
 .ez-btn:visited,
 .ez-btn:active { color: #fff; }
-
-@media only screen and (max-width: 367px) {
-	.imagination { position: fixed; left: 5%; top: 5%; width: 90%; height: 90%; }
-}
-
-@media only screen and (min-width: 368px) and (max-width: 767px) {
-	.imagination { position: fixed; left: 5%; top: 5%; width: 90%; height: 90%; }
-}
-
-@media only screen and (max-width: 767px) {
-	.draft { width: 100%; }
-	.lensanti-reflection-logo,
-	.lenstransition-logo { width: 80%; margin: 0 10%; height: 100%; }
-	.lensanti-reflection-col { width: 33.33333333%; height: 65px;}
-	.lenstransition-col { width: 25%; height: 65px;}
-	.lensanti-reflection-col > div,
-	.lenstransition-col > div { margin: 10px 10%; width: 80%; }
-}
-
-@media only screen and (min-width: 768px) {
-	.draft { width: 70%; margin: 0 15%; }
-	.imagination { left: 10%; top: 10%; width: 80%; height: 80%; }
-}
-
-@media only screen and (min-width: 992px) {
-	.imagination { left: 15%; top: 10%; width: 70%; height: 80%; }
-}
-
-@media only screen and (min-width: 1200px) {
-	.lensmaterial-block{ width: 100%; }
-	.lensmaterial-block .lens-section-title { margin-bottom: 1em; }
-	.lensmaterial-col{ width: 20%; height: 100%; padding: .2em; }
-	.lensmaterial-col > div { margin-bottom: 0; display: block; width: 100%; min-height: 4em;float: none;}
-	.lensmaterial-col > div > span { width: 100%; font-size: .9em;}
-	.lensmaterial-col > img { width: 100%; max-width: 110px; height: auto; }
-
-	.lenstype-block{ width: 100%; }
-	.lenstype-block .lens-section-title { margin-bottom: 1em; }
-	.lenstype-col{ width: 33.3333333%; height: 100%; padding: .2em; }
-	.lenstype-col > div { margin-top: 2em; display: block; width: 50%; min-height: 4em;float: left;}
-	.lenstype-col > div > span { width: 100%; font-size: .9em;}
-	.lenstype-col > img { width: 50%; max-width: 110px; height: auto; }
-
-	.imagination { left: 20%; top: 10%; width: 60%; height: 80%; }
-}
-
-
-
-
-@media only screen and (min-width:400px) {
-	.eyewear-sides-inner { height: 37%; }
-}
-@media only screen and (min-width:530px) {
-	.eyewear-sides-inner > h2 { text-shadow: -1px -1px .5px #000; font-size: 3em; }
-	.ez-btn { padding: .75em 2em; }
-}
-@media only screen and (min-width:680px) {
-.couponletter-left { width: 55%; margin: 0 19%; height: 100%; }
-}
-@media only screen and (min-width:768px) {
-  h3 { font-size: 2em; line-height: 1.8; }
-  p,
-  input,
-  label { font-size: 1.1em; line-height: 1.4em; }
-  #search { font-size:14px; padding: 0 12px; line-height: 26px; border-color: #cac5ca;}
-  .header-cart { border:1px solid #535f6b; }
-  .eyewear-sides-inner { height: 45%; }
-  .eyewear-sides-wrap { width: 100%; margin-left: 0; height: 30vw; }
-  .eyewear-sides > div { width: 49.7%; height: 100%; }
-  .eyewear-rx-wrap { margin: 6em 0 1em; }
-  .eyewear-rx { width: 70%; margin: 0 15%; }
-  .eyewear-rx > div { width: 50%; margin: 0; }
-  .rx-left img { padding-right: 2em; }
-  .eyewear-rx-inner > h3 { margin-top: 0; }
-  .points-banner-wrap { height: 300px; }
-  .eyewear-instagram-wrap { margin: 3em 0; }
-  .instagram-cols { width: 70%; margin: 0 15%; }
-  .eyewear-couponletter-wrap { margin: 2em 0 -2em; }
-  .couponletter-left { width: 42%; margin: 0; }
-  .couponletter-left > img { padding: 5em 3em 2em 4em; }
-  .couponletter-right { width: 58%; }
-  .email-input-wrap > input { padding: .75em 1.5em; width: 62%; }
-  .quick-message { width: 70%; margin: 0 15%; }
-  .qm-title > h3 { text-align: left; }
-  .qm-input-area > .qm-send { position:absolute; right:0; top:0; margin:0; }
-}
-@media only screen and (min-width:992px) {
-  .eyewear-sides-inner { height: 40%; }
-  .instagram-cols { width: 60%; margin: 0 20%; }
-  .quick-message-wrap { height: 150px; }
-  .quick-message { width: 44%; margin: 0 28%; position: absolute; height: 200px; }
-  .qm-title > h3 { margin-bottom: 7px; }
-  .qm-input-area > textarea { height: 80%; }  
-}
-@media only screen and (min-width:1200px) {
-   h3 { font-size: 2.1em; line-height: 2em; }
-  .eyewear-sides-wrap { display: inline-block;
-    width: 100%;
-    margin: 0px 0% 2em;
-    height: 30vw; }
-  .eyewear-sides-inner { height: 35%; }
-  .eyewear-rx-wrap { margin: 0; }
-  .eyewear-rx { width: 60%; margin: 0 20%; }
-  .eyewear-rx-inner > p { font-size: 1.4em; line-height: 1.3em; }
-  .instagram-cols { width: 52%; margin: 0 24%; }
-  .eyewear-instagram-wrap { margin: 0; }
-  .instagram-cols { width: 60%; margin: 0 20%; }
-  .eyewear-couponletter-wrap { width: 70%; margin: 0 15% -2.5em; }
-  .couponletter-left > img { padding: 1em; position: absolute; top: 3em; }
-  .qm-input-area > textarea { height: calc(100% - 2em); }
-  .block-section-separator { width: 100%; min-height:1px; margin-top:3em; }
-}
-@media only screen and (min-width:1320px) {
-  .eyewear-sides-inner { height: 30%; }
-}
-@media only screen and (max-width:992px) {
-  .eyewear-sides-inner > h2 { margin: 0; }
-}
-@media only screen and (max-width:767px) {
-	.eyewear-sides-inner { height: 30%; }
-	.eyewear-sides-wrap { height: 55vw; }
-    .eyewear-sides > div { width: 100%; height: 100%; }
-}
-@media only screen and (max-width:635px) {
-	.eyewear-sides-inner { height: 37%; }
-}
-@media only screen and (max-width:529px) {
-	.eyewear-sides-inner > h2 { text-shadow: -1px -1px 1px #000; font-size: 2.5em; }
-	.couponletter-left { width: 73%; margin: 0 5%; }
-	.ez-btn { padding: .5em 1.5em; }
-}
-@media only screen and (max-width:399px) {
-	.eyewear-sides-inner { height: 41%; }
-}
 
 /* Footer ================================================================================ */
 .footer{ position: relative; width: 100%; background: url(../images/email-list-768.jpg) 0 0 no-repeat; background-size:cover; }
@@ -3405,8 +3248,6 @@ span.opened:before {content: "\f068";}
 .label-product.label-indent > span.sale {top: 30px;}
 
 
-
-
 /* Clears ================================================================================ */
 .clear {clear: both; display: block; overflow: hidden; visibility: hidden;width: 0;height: 0;}
 
@@ -3470,3 +3311,79 @@ span.opened:before {content: "\f068";}
 .input-box:after,
 .block-subscribe .block-content:after { display:block; content:"."; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; }
 /* =======================================================================================*/  
+
+/* ///////////////      super fish       //////////////////////////*/
+
+.nav-container {  position: relative;  z-index: 10; border-bottom: none !important;}
+.sidebar  .nav-container {margin-bottom: 34px; padding-bottom: 15px; display: block; position: relative !important;}
+.block.nav-container .block-title {margin-bottom: 0;}
+
+  /* menu icon */
+ .sf-menu-block {display: block; position: relative;}
+ .menu-icon-style {
+    font-size: 18px;
+    color: #404040;
+    font-weight: 300;
+    line-height: 26px;
+    padding: 0 0 27px;
+ }
+  #menu-icon {
+    display: block;
+    cursor: pointer;
+    padding: 0 0px;
+  }
+  #menu-icon:before {content: "\f055"; font-size: 25px; float: right; }
+  #menu-icon.active:before { content: "\f056"; }
+
+  .sf-menu-phone {
+    background: #fff;
+    border-top: 1px solid #ededed;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    moz-box-sizing:border-box;
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+  }
+  .sf-menu-phone li {  position: relative; text-transform: capitalize; }
+  .sf-menu-phone > li { border-bottom: 1px solid #ededed; background: #fff; line-height: 20px;  }
+  .sf-menu-phone > li.last { border-bottom: 1px solid #ededed;}
+  .sf-menu-phone li a { display: block;  color: #7a7a7a; font-size: 11px; font-weight: 300; text-transform: uppercase;  }
+  .sf-menu-phone > li > a {padding: 11px 0; font-size: 11px; display: block; color: #7a7a7a; font-weight: 300; text-transform: uppercase;}
+  .sf-menu-phone li a:hover { color: #356799; }
+  .sf-menu-phone li li { padding: 4px 0; line-height: 16px; }
+  .sf-menu-phone li li.last {}
+  .sf-menu-phone li li:first-child {}
+  .sf-menu-phone li li:first-child strong {top:10px;}
+  .sf-menu-phone li strong {
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 5px;
+    width: 24px;
+    font-size: 13px; 
+    line-height: 16px;
+    text-align: center;
+  }
+  .sf-menu-phone > li > strong {top: 9px; right: 18px; font-size: 13px; line-height: 20px;}
+  .sf-menu-phone li strong:hover { cursor: pointer; }
+  .sf-menu-phone li strong:before {content: "\f067"; }
+  .sf-menu-phone li strong.opened:before { content: "\f068"; }
+
+  /* dropdown */
+  .sf-menu-phone ul {  
+    width: auto;  
+    padding: 25px;    
+    display: none; 
+    moz-box-sizing:content-box;
+    -moz-box-sizing:content-box; 
+    -webkit-box-sizing:content-box; 
+    box-sizing:content-box;
+ }
+  .sf-menu-phone > li.active > a > span {color: inherit;}
+  
+  .sf-menu-phone  li.active > a,
+  .sf-menu-phone  li  a:hover { color: #356799; }
+
+
