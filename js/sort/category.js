@@ -400,12 +400,6 @@ jQuery(document).ready(function(){
         	lastScroll = scrol;
         	getVisibles(); console.log("executed");
         }
-        /*// set timer to end interval
-        clearTimeout(jQuery.data(this, 'scrollTimer'));
-        jQuery.data(this, 'scrollTimer', setTimeout(function() {
-            if () 
-                getVisibles(); 
-        }, 50));*/
     });
 
     var tempImg = new Image();

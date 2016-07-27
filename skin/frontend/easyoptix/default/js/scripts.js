@@ -383,6 +383,24 @@ jQuery(document).ready(function() {
 	        
 	    });
 
+		// set timer to end interval
+		var theWindow = jQuery(window);
+		jQuery('#nav > .parent').hover(function(e){
+			var that = jQuery(this);
+	        jQuery.data(theWindow, 'hoverIn', setTimeout(function() {
+	        	clearTimeout(jQuery.data(theWindow, 'hoverOut'));
+	            that.find('ul.child').addClass('active');
+	        }, 300));	
+		}, function(e){
+			var that = jQuery(this);
+			clearTimeout(jQuery.data(theWindow, 'hoverIn'));
+			jQuery.data(theWindow, 'hoverOut', setTimeout(function() {
+	            that.find('ul.child').removeClass('active');
+	        }, 300));
+		}); 
+
+		
+
 	    /*jQuery('.ajax-child').on('click', function (e) {
 	    	var that = jQuery(this);
 
