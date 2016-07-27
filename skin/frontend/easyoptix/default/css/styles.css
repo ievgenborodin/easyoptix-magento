@@ -634,6 +634,8 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 .sort-btn.boolean.sort-btn-active i { color: #fff; border-width:2px; border-color: #333;}
 .active-filter { background-color: #356799 !important; color: #eee;}
 
+.product-image .big { width: 100% !important; }
+
 /* Toolbar */
 .toolbar { opacity: 0; margin-bottom: 30px;}
 .toolbar select { min-width:63px;}
