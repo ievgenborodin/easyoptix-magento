@@ -6,7 +6,9 @@
 ** ====================================== */
 @media only screen and (min-width:400px) {
 	.fs-filters-ul > li { min-width: 48%; margin: 1%; }
-	.category-minititle { position:absolute; color:#fff;}
+	.category-minititle { position:absolute; color:#fff; right: 10px;
+    bottom: 10px;
+    font-size: 20px;}
 }
 
 
