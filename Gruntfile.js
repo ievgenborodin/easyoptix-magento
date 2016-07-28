@@ -44,7 +44,7 @@ grunt.initConfig({
 	  },
 	  target: {
 	    files: {
-	      '<%= sources.css %>/style.min.css': ['<%= sources.css %>/style.css'],
+	      '<%= sources.css %>/styles.min.css': ['<%= sources.css %>/styles.css'],
 	      '<%= sources.css %>/responsive.min.css': ['<%= sources.css %>/responsive.css'],
 	      '<%= sources.css %>/photoswipe.min.css': ['<%= sources.css %>/photoswipe.css'],
 	      '<%= sources.css %>/camera.min.css': ['<%= sources.css %>/camera.css']

@@ -878,7 +878,7 @@
 	.fs-filters-switch { padding-left: 5px; }
 
 	.product-shop { min-height: 87px; }
-	.product-image { height: 104px; }
+	.product-image { min-height: 104px; }
 
 	.product-rows li { padding: 0; margin-bottom: 0; border-top:1px solid #eee;}
 	.product-rows li:nth-child(odd) {border-right: 1px solid #eee;}
@@ -1302,8 +1302,10 @@
 
 	.eyewear-instagram-wrap { margin:0;}
 .eyewear-couponletter > div { float:none;display:inline-block; bottom:0; right:0; }
-.eyewear-couponletter > .couponletter-left {
-    width: 50%;}
+.eyewear-couponletter > .couponletter-left { width: 50%;
+    position: relative;
+    bottom: 0;
+    right: 0;}
     .eyewear-couponletter > .couponletter-right {
     width: 100%;}
 	.eyewear-rx-wrap { margin: 2em 0 1em; }
