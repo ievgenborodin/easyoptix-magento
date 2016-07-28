@@ -944,7 +944,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 .top-icon-menu,
 .swipe { background-color: #fff; }
-.swipe { display: block; left: -100%; overflow: hidden; position: fixed; top: 50px; width: 100%; z-index:2; font-size: 13px; font-weight: bold; color: #323232; line-height: 25px; height: 100%; moz-box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; z-index:6; padding-bottom: 50px; }
+.swipe { display: block; left: -100%; overflow: hidden; position: fixed; top: 50px; border-right:1px solid; z-index:2; font-size: 13px; font-weight: bold; color: #323232; line-height: 25px; height: 100%; moz-box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; z-index:6; padding-bottom: 50px; }
 
 .swipe:before, 
 .swipe:after {-moz-box-sizing:inherit;}
@@ -1031,10 +1031,10 @@ body div.shadow { display: block; height: 100%; left: 0; opacity: 0.5; position:
 .swipe-menu .child > li > a > img { width: 100%;  } 
 .swipe-menu .child > li > a { opacity:1; width: 100%; padding:0; margin:0; text-align: center; border: none;  }
 
-.swipe-menu .child-col { width: 50%; float: left; padding: 0 1em; }
+.swipe-menu .child-col { width: 50%; float: left; padding: 0 .5em; }
 .swipe-menu .child-col > span { color: #999; }
 .swipe-menu .child-col > ul { margin-left: -1em;}
-.swipe-menu .child-col > ul > li { padding: 0 1em; }
+.swipe-menu .child-col > ul > li {     padding: 0 .5em 0 1em; }
 
 .swipe-menu .child3 > li,
 .swipe-menu .child4 > li { position: relative; float:left; }
@@ -1096,7 +1096,7 @@ body div.shadow { display: block; height: 100%; left: 0; opacity: 0.5; position:
 /*#nav .parent:hover > */
 #nav ul.child.active { padding-top: 15px; padding-bottom: 15px; opacity: 1 !important; max-height: 500px !important; transition: max-height .5s; border-bottom: 1px solid #404040; }
 
-#nav .child-col { float: left; margin: 1em 2.5em; color: #909090; max-width: 200px; } 
+#nav .child-col { float: left; margin: 1em 2em; color: #909090; max-width: 200px; } 
 #nav .child-col img { display:block; width: 100%; border-radius: 2px;  }
 #nav .child-col > ul { margin-top: .2em; }
 #nav .child3 {}
@@ -1993,7 +1993,7 @@ img.big { padding: 30px; }
 
 /* Product Tags */
 .tags-list li { display:inline; font-size:15px; line-height:normal; margin-right:10px; }
-
+.contact-block-header { background:url(../images/media/contact.jpg); background-size:cover; height:124px; margin-bottom:2em; position:relative; }
 /* Advanced Search */
 .advanced-search + .buttons-set {max-width: 340px;}
 .advanced-search-amount {margin-bottom:5px;}
@@ -2863,9 +2863,9 @@ img.big { padding: 30px; }
     border: 1px solid #111;
     background-color: #000;
     color: #fff;
-    opacity: .8;
+    opacity: 1;
     text-transform: uppercase; }
-.ez-btn:hover { opacity: 1; transition: opacity .1s, background-color .1s, color .1s; cursor: pointer; }
+.ez-btn:hover { opacity: 1; transition: background-color .1s, color .1s; cursor: pointer; }
 
 .tpad { padding-top: 30px; }
 
@@ -2883,9 +2883,9 @@ img.big { padding: 30px; }
 
 /* ///////////////////////////     rx block        ///////////////////////////// */
 
-.eyewear-rx-wrap { display:inline-block; clear: both; margin: 3em 0 1em; }
+.eyewear-rx-wrap { display:inline-block; clear: both; }
 .eyewear-rx { position: relative; display:inline-block; text-align: center; }
-.eyewear-rx > div { position: relative; width: 70%; margin: 0 15%; height: 100%; float: left; }
+.eyewear-rx > div { position: relative; width: 70%; margin: 0 15%; height: 100%; }
 .rx-left > img { display: block; width: 100%; opacity:.95; }
 .eyewear-rx-inner {  }
 .eyewear-rx-inner > h3 { color: #111; margin-top: 1em; }
@@ -2907,7 +2907,7 @@ img.big { padding: 30px; }
 
 /* ///////////////////////////     instagram block        ///////////////////////////// */
 
-.eyewear-instagram-wrap { clear: both; width: 100%; margin: 3em 0 1em; position: relative; }
+.eyewear-instagram-wrap { clear: both; width: 100%; position: relative; }
 .eyewear-instagram { position: relative; width: 100%; height: 100%;  }
 .eyewear-instagram .instagram-title { width: 100%; height: auto; text-align: center; }
 .instagram-cols { display:inline-block; width: 90%; position: relative; margin: 0 5%; height: auto; }
@@ -2916,13 +2916,13 @@ img.big { padding: 30px; }
 
 /* ///////////////////////////     couponletter block        ///////////////////////////// */
 h3 { font-size: 18px; line-height: 2; }
-.eyewear-couponletter-wrap { display: inline-block; position: relative; width: 100%; margin: 0 0 4em; }
+.eyewear-couponletter-wrap { display: inline-block; position: relative; width: 100%;  }
 .eyewear-couponletter { position: relative; width: 100%; height: 100%; }
 .eyewear-couponletter > div { float:left; position:relative; min-height: 1px; }
 .couponletter-left { width: 60%; margin: 0 16%; height: 100%; }
 .couponletter-left > img { display: block; width: 100%; padding: 5em 4em 2em 6em; transform: rotate(-21deg); }
 .couponletter-right { width: 100%; height: 100%; padding: .5em 2em; text-align: center; }
-.eyewear-couponletter-inner > h3 { color: #222; }
+.eyewear-couponletter-inner > h3 { color: #222; margin-top: 0;}
 .eyewear-couponletter-inner > p { color: #777; padding: 0 1em; }
 .email-input-wrap { text-align: center; margin-top: 2.4em;  }
 .email-input-wrap input { padding: .5em 1.5em; width: 60%; color: #777; font-size: 1.1em; line-height: 18px; }
@@ -3137,7 +3137,7 @@ span.opened:before {content: "\f068";}
 	padding: 0 0 7px;
 }
 
-.contact-left{ width:25%; float:right; padding-bottom:20px;}
+.contact-left{ display:none; width:25%; float:right; padding-bottom:20px;}
 .contact-left h3 {
 	font-size:13px;
 	line-height:16px;
@@ -3149,7 +3149,7 @@ span.opened:before {content: "\f068";}
 .contact-left p{ font-size:12px; color:#8a8989; line-height:17px;}
 .contact-left ul li{border-bottom:1px solid #ececec; padding-bottom:17px; margin-bottom:17px;}
 .contact-left ul li.last{ border:none; padding:0; margin:0;}
-#contactForm { float:left; width:73%;}
+#contactForm { width: 73%; display: inline-block; }
 #contactForm .form-list .input-box {width:auto;}
 #contactForm .fieldset{ background:none; border:none; padding:0; margin:0;}
 #contactForm .form-list input.input-text { border-box:border-box; width:95%;}

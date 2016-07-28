@@ -34,6 +34,9 @@ grunt.initConfig({
       }
     }
   },
+  clean: {
+    old_cssmin: ['<%= sources.css %>/style.min.css', '<%= sources.css %>/responsive.min.css', '<%= sources.css %>/photoswipe.min.css', '<%= sources.css %>/camera.min.css']
+  },
   cssmin: {
 	  options: {
 	    shorthandCompacting: false,
@@ -60,10 +63,11 @@ grunt.initConfig({
 	},
 });
 
+grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.loadNpmTasks('grunt-contrib-watch');
 
-grunt.registerTask('default', ['uglify', 'cssmin']);//, 'watch'
+grunt.registerTask('default', ['uglify', 'clean', 'cssmin']);//, 'watch'
 
 };

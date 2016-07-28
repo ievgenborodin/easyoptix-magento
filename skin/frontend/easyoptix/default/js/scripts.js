@@ -113,7 +113,7 @@ jQuery(document).ready(function(){
 /********************************************************************* swipe *****************************************************************************/
 		function swipe_animate_true(){
 			jQuery('.swipe-control').addClass('active');
-			jQuery('.swipe').stop(true).animate({'left':'0'},300);
+			jQuery('.swipe').stop(true).animate({'left':'0'},400);
 		}
 		function swipe_animate_false(){
 			jQuery('.swipe-control').removeClass('active');
@@ -217,7 +217,7 @@ jQuery(document).ready(function(){
  var top_search=$('.top-search')
  $(window).bind('load resize',function(){
   var bodyWidth=$('.container').width()
-  if(bodyWidth>=767){    
+  if(bodyWidth>=1023){    
     if($flag===true)
   		$('#search_mini_form').show().css({opacity:1})
   	$flag = false;
@@ -390,13 +390,13 @@ jQuery(document).ready(function() {
 	        jQuery.data(theWindow, 'hoverIn', setTimeout(function() {
 	        	clearTimeout(jQuery.data(theWindow, 'hoverOut'));
 	            that.find('ul.child').addClass('active');
-	        }, 300));	
+	        }, 200));	
 		}, function(e){
 			var that = jQuery(this);
 			clearTimeout(jQuery.data(theWindow, 'hoverIn'));
 			jQuery.data(theWindow, 'hoverOut', setTimeout(function() {
 	            that.find('ul.child').removeClass('active');
-	        }, 300));
+	        }, 200));
 		}); 
 
 		
