@@ -2920,7 +2920,7 @@ h3 { font-size: 18px; line-height: 2; }
 .eyewear-couponletter { position: relative; width: 100%; height: 100%; }
 .eyewear-couponletter > div { float:left; position:relative; min-height: 1px; }
 .couponletter-left { width: 60%; margin: 0 16%; height: 100%; }
-.couponletter-left > img { display: block; width: 100%; padding: 5em 4em 2em 6em; transform: rotate(-21deg); }
+.couponletter-left > img { display: block; width: 100%; padding: 2em; transform: rotate(-21deg); }
 .couponletter-right { width: 100%; height: 100%; padding: .5em 2em; text-align: center; }
 .eyewear-couponletter-inner > h3 { color: #222; margin-top: 0;}
 .eyewear-couponletter-inner > p { color: #777; padding: 0 1em; }

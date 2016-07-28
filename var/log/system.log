@@ -5730,3 +5730,12 @@
 2016-07-28T08:25:37+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
 2016-07-28T08:25:37+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
 2016-07-28T08:25:37+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-07-28T08:32:17+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-07-28T08:32:17+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-07-28T08:32:17+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-07-28T08:32:19+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-07-28T08:32:19+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-07-28T08:32:19+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-07-28T08:41:07+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-07-28T08:41:07+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-07-28T08:41:07+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
