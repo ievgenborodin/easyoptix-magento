@@ -417,7 +417,7 @@ jQuery(document).ready(function() {
 				currSubMenu = '';
 				currSubMenuTitle = '';
 				//udjust height
-				innerNav.stop(true).animate({ height: 0 }, 400);
+				innerNav.stop(true).animate({ height: 0 }, 400).css('border-bottom', 'none');
 			}, 400));
 		});
 
@@ -441,7 +441,7 @@ jQuery(document).ready(function() {
 			//show new submenu
 			currSubMenu.stop(true).fadeIn(400).addClass('active');
 			//udjust height
-			innerNav.stop(true).animate({ height: newHeight }, 400);
+			innerNav.stop(true).animate({ height: newHeight }, 400).css('border-bottom', '1px solid #909090');
 		};
 
 		function secureHeight(that){
