@@ -1114,8 +1114,8 @@ body div.shadow { display: block; height: 100%; left: 0; opacity: 0.5; position:
 #inner-nav li.level1 > a > span {  color: #606060; font-size: 11px; }
 #inner-nav li.level1 > a:hover > span { text-decoration: underline; color: #356799; }
 
-#inner-nav .child5 li.level1 { float:right; width: auto; margin: 2em 1.5em;  }
-#inner-nav .child5 li.level1:first-child { margin-right: 25%; }
+#inner-nav .child5 li.level1 { float:right; width: auto; margin: 1.5em 1.5em 0;  }
+#inner-nav .child5 li.level1:first-child { margin-right: 20%; }
 #inner-nav .child5 li.level1 > a > span { font-size: 14px; }
 
 #inner-nav:hover .child.active { display:block !important;}
