@@ -377,7 +377,7 @@
     width: 100%; left:0; top: 140px;
     background-color: #fff;
     z-index: 999; opacity:.9; }
-.fs-wrap.fix { position: fixed; top: 114px; }
+.fs-wrap.fix { position: fixed; top: 96px; }
 .fs { display:inline-block; position:relative; width: 100%; margin: 0 auto; }
 
 .fs-left { position: relative; width: 16%; float: left; margin-top:3px; }
