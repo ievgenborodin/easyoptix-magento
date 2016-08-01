@@ -379,26 +379,83 @@ jQuery(document).ready(function() {
 	        parent
 	            .attr('src', tempImg.src)
 	            .css('margin', '0')
-	            .removeClass('slowFade');
-	        
+	            .removeClass('slowFade');   
 	    });
 
-		// set timer to end interval
-		var theWindow = jQuery(window);
-		jQuery('#nav > .parent').hover(function(e){
-			var that = jQuery(this);
-	        jQuery.data(theWindow, 'hoverIn', setTimeout(function() {
-	        	clearTimeout(jQuery.data(theWindow, 'hoverOut'));
-	            that.find('ul.child').addClass('active');
-	        }, 200));	
-		}, function(e){
-			var that = jQuery(this);
-			clearTimeout(jQuery.data(theWindow, 'hoverIn'));
-			jQuery.data(theWindow, 'hoverOut', setTimeout(function() {
-	            that.find('ul.child').removeClass('active');
-	        }, 200));
-		}); 
 
+/* =================  navigation  ========================= */
+
+		var currId, currSubMenu, currSubMenuTitle,
+			theWindow = jQuery(window),
+			innerNav = jQuery('#inner-nav'),
+			navParent = jQuery('#nav > .parent');
+
+		// trigger on title hover
+		navParent.hover(function(e){
+			var that = jQuery(this),
+				thisId = that.data('id');
+
+			if (thisId != currId) {
+				// timer
+				jQuery.data(theWindow, 'hoverIn', setTimeout(function() {
+					setSubMenu(thisId, that);
+				}, 300));
+			}
+		}, function(e){
+			//timer
+			clearTimeout(jQuery.data(theWindow, 'hoverIn'));
+		});
+
+		// trigger on leaving header
+		jQuery('.nav-container-inner').mouseleave(function(e){
+			//timer
+			jQuery.data(theWindow, 'hoverOut', setTimeout(function() {
+				//secure height
+				(currSubMenu) && secureHeight(currSubMenuTitle);
+				//set default values
+				currId = '';
+				currSubMenu = '';
+				currSubMenuTitle = '';
+				//udjust height
+				innerNav.stop(true).animate({ height: 0 }, 400);
+			}, 400));
+		});
+
+		jQuery('.nav-container-inner').mouseenter(function(e){
+			//timer
+			clearTimeout(jQuery.data(theWindow, 'hoverOut'));
+		});
+
+		function setSubMenu(id, that) {
+			var newHeight;
+			//secure height
+			(currSubMenu) && secureHeight(that);
+			//update values
+			currId = id;
+			currSubMenu = jQuery('.cat-' + id);
+			currSubMenuTitle = that;
+			newHeight = currSubMenu.height();
+			//setlink set active
+			that.find('span').hide();
+			that.addClass('active').find('a').show();
+			//show new submenu
+			currSubMenu.stop(true).fadeIn(400).addClass('active');
+			//udjust height
+			innerNav.stop(true).animate({ height: newHeight }, 400);
+		};
+
+		function secureHeight(that){
+			var oldHeight = currSubMenu.height();
+			
+			innerNav.css('height', oldHeight + 'px');
+			//unset link, remove active
+			navParent.find('span').show();
+			navParent.removeClass('active').find('a').hide();
+			//hide old submenu
+			currSubMenu.stop(true).fadeOut(400).removeClass('active');
+		}
+
+		/* ========================== */
 		
 
 	    /*jQuery('.ajax-child').on('click', function (e) {

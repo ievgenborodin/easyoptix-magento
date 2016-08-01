@@ -1062,74 +1062,64 @@ body div.shadow { display: block; height: 100%; left: 0; opacity: 0.5; position:
 .swipe-menu .child5 > li span { text-align: initial; padding: 0 1em; }
 
 /************************************  Navigation *********************************************************/
-#nav li.first { padding-left: 0 !important; }
-#nav a { display: inline-block; line-height:22px; font-size:13px; text-decoration:none; }
-#nav { position: relative; padding:0; }
-#nav .level0 > a { display:block; }
+.nav-container-inner { 
+	position:absolute; 
+	z-index: 999; 
+	width: 100%; 
+	text-align: left; 
+	left: 0; 
+	margin-bottom: 26px; 
+	font-size:13px; color: #666; background: #fff; 
+}
 
-#nav ul.level0,
-#nav li.level0 div.nav_block { position:absolute; z-index: 999; width: 100%; left: 0; display: none; background: #fff; font-size:13px; color: #666; }
-#nav li.level1.parent { display:block; float:left; padding: 0 10px 0 0; }
+/* ul */
+.nav-container-inner ul { padding: 0; display:block; }
+/* li */
+#nav li,
+#inner-nav li { display:inline-block; float:none; margin: 0 1.5em; padding: 0 .5em; }
+#nav li:hover,
+#inner-nav a:hover { color:#356799; } 
 
-#nav ul.level0 a:hover { text-decoration:underline; }
-#nav ul.level0 li.parent > a:hover { text-decoration:none; }
+#nav { text-align: center; }
+#nav .level0 > span, 
+#nav .level0 > a { display:none; text-transform:uppercase; line-height:22px; font-size: 14px; text-decoration:none; color: #606060; }
+#nav .level0 > span { display:block; }
+#nav .level0.parent { cursor:pointer; }
+#nav .level0.parent.active { border-bottom: 2px solid #356799;}
 
-#nav .nav_block li.parent > a,
-#nav li.level1.parent > a,
-#nav .nav_block h3,
-#nav li.nav-text-block h3 { display: block; padding-bottom: 5px; }
-
-#nav .nav_block li.parent,
-#nav li.level1.parent { margin-bottom: 10px; }
-
-#nav div.nav_block li,
-#nav li.level1 { display: block; position: relative; float: left; padding:1em 10px 1em 0; }
-#nav li.level1 > a { display: table; }
-#nav li.level1 span { display: table-row; text-align: center; }
-#nav li.level1 img { display: table-row; margin-left: 5%; width: 90%; }
-
-#nav ul { padding: 0; }
-#nav ul.level1 ul { margin-left: 5px; }
-
-#nav { margin-bottom: 26px; text-align: center; }
-#nav li.level0 { display: inline-block; padding-left: 20px; padding-right: 20px; text-align: left; }
-#nav li.level0 > a { padding: 0 6px; }
-#nav li.level0 > a > span,
-#nav li.level0 > p > a > span { text-transform:uppercase; font-size: 14px; color: #606060; }
-#nav li.level0.block_li > a > span { cursor: pointer; }
-#nav li.level0 > a:hover > span,
-#nav li.level0.active > a > span { color: #d88d5b; }
-#nav .nav_block li.parent > a > span,
-#nav li.level1 > a > span {  color: #000; font-size: 11px; }
-#nav ul.level1 { font-family: 'TeXGyreAdventorRegular'; font-size: 11px; line-height: 19px; }
-#nav li.level0.homelink:before,
-#nav.no-home-link li.level0.first:before { display: none; }
-#nav li.level0.homelink,
-#nav li.level0.homelink > a,
-#nav.no-home-link li.level0.first,
-#nav.no-home-link li.level0.first > a { padding-left: 0; }
-#nav .last { padding-right: 0 !important; }
-
-#nav ul.child{ display: block !important; overflow: hidden; max-height: 0; opacity: 0; transition: max-height .5s; border-bottom: 0px solid #404040; padding-top: 0; padding-bottom: 0; }
-#nav ul.child:hover { opacity: 1; max-height: 500px;}
+#inner-nav { text-align: left; }
+#inner-nav a { display: inline-block; text-decoration:none; }
+#inner-nav li.level1.parent { display:block; float:left; padding: 0 10px 0 0; }
+#inner-nav ul.level0 a:hover { text-decoration:underline; }
+/*border-bottom: 1px solid #404040;*/
+#inner-nav ul.child { display: none; overflow: hidden; transition: max-height .5s; padding-top: 0; padding-bottom: 0; text-align: center; }
+/*#inner-nav ul.child:nth-child(5) { display: block; }*/
 /*#nav .parent:hover > */
-#nav ul.child.active { padding-top: 15px; padding-bottom: 15px; opacity: 1 !important; max-height: 500px !important; transition: max-height .5s; border-bottom: 1px solid #404040; }
+#inner-nav ul.child.active { }
 
-#nav .child-col { float: left; margin: 1em 2em; color: #909090; max-width: 200px; } 
-#nav .child-col img { display:block; width: 100%; border-radius: 2px;  }
-#nav .child-col > ul { margin-top: .2em; }
-#nav .child3 {}
-#nav .child3 li { width: 14.285714%; }
-#nav .child3.Brands li:first-child { margin-left: 14.285714%; }
-#nav .child4 li { width: 16.666666%; }
-#nav .child5 { padding-right: 9% !important; }
-#nav .child5 > li { float:right !important; width: 10%; text-align: center; }
-#nav .child5 > li span { font-size: 1.1em !important; color: #707070 !important; padding:1em 10px 1em 0; }
-#nav .minibanner-wrap { margin: 0; max-width: 250px; padding: 1em 3em 1em 1em; float: right; }
-#nav .minibanner-wrap > a { width: 100%; } 
-#nav .child-col > ul { padding: 0;}
-#nav .child-col > span { position: relative; }
-#nav .child-col > span:after{  content: '';  width: 100%;  position: absolute; left: 0;  bottom: -1px;  border-color: #eee;  border-width: 0 0 1px;  border-style: solid; }
+#inner-nav .child-col { display: inline-block; font-size: 13px; line-height:22px; margin: 1em 2em; color: #909090; text-align: left; vertical-align: top; } 
+#inner-nav .child-col > ul { padding: 0;}
+#inner-nav .child-col > ul li { display:block; padding:0; margin:0;}
+#inner-nav .child-col > span { position: relative; }
+#inner-nav .child-col>span:after { content: ''; width: 100%; position: absolute; left: 0; bottom: -1px; border-color: #eee; border-width: 0 0 1px; border-style: solid; }
+#inner-nav .minibanner-wrap { display: inline-block; margin: 1em 2em; max-width: 250px; }
+#inner-nav .minibanner-wrap img { display: block; width:100%; }
+
+#inner-nav li.level1 { display: inline-block; position: relative; width: 10em; margin: 1.5em 0; }
+#inner-nav li.level1 > a { display: table; }
+#inner-nav li.level1 span { display: table-row; text-align: center; }
+#inner-nav li.level1 img { display: table-row; margin-left: 5%; width: 90%; }
+#inner-nav ul.level1 ul { margin-left: 5px; }
+
+#inner-nav li.level1 > a > span {  color: #606060; font-size: 11px; }
+#inner-nav li.level1 > a:hover > span { text-decoration: underline; color: #356799; }
+
+#inner-nav .child5 li.level1 { float:right; width: auto; margin: 2em 1.5em;  }
+#inner-nav .child5 li.level1:first-child { margin-right: 25%; }
+#inner-nav .child5 li.level1 > a > span { font-size: 14px; }
+
+#inner-nav:hover .child.active { display:block !important;}
+/* ====================    desktop banners ==================== */
 
 .desktop-banners > div a { border: 1px solid rgb(211, 228, 199); }
 .desktop-banners > div { position: relative; }

@@ -1,4 +1,4 @@
-<ul>	
+<ul>
 	<?php foreach ($this->cms_pages as $page) : ?>
 		<li class="single">
 			<a href="<?php echo $page['url'] ?>"><?php echo $page['name'] ?></a>
@@ -17,7 +17,7 @@
 						<?php $child_name = $child['name']; if ($child_name == 'Sale') : ?>
 					</ul>
 					<br>
-					<span><?php echo $name . ".s $child_name" ?></span>
+					<span><?php echo $name . "'s $child_name" ?></span>
 					<ul>
 						<li class="col1"><a href="<?php echo $child['url'] ?>"><?php echo $child_name ?></a></li>
 					</ul>
