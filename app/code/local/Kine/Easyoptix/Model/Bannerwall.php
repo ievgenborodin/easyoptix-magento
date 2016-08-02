@@ -10,29 +10,29 @@ class Kine_Easyoptix_Model_Bannerwall extends Mage_Core_Model_Abstract
 				),
 				array(
 					'title' => 'Shop Ray-Ban Women',
-					'href' 	=> '/women/brands/ray-ban.html'
+					'href' 	=> 'women/brands/ray-ban.html'
 				)
 			),
 			'left-bottom-1' => array(
 				array(
 					'title' => 'Shop Clubmaster Glasses',
-					'href' 	=> '/styles/clubmaster.html'
+					'href' 	=> 'styles/clubmaster.html'
 				)
 			),
 			'left-bottom-2' => array(
 				array(
 					'title' => 'Shop Dior Men',
-					'href' 	=> '/men/brands/dior.html'
+					'href' 	=> 'men/brands/dior.html'
 				),
 				array(
 					'title' => 'Shop Dior Women',
-					'href' 	=> '/women/brands/dior.html'
+					'href' 	=> 'women/brands/dior.html'
 				)
 			),
 			'right' => array(
 				array(
 					'title' => 'Shop Round Glasses',
-					'href' 	=> '/styles/round.html'
+					'href' 	=> 'styles/round.html'
 				)
 			)
 		),
@@ -40,33 +40,33 @@ class Kine_Easyoptix_Model_Bannerwall extends Mage_Core_Model_Abstract
 			'left-top' => array(
 				array(
 					'title' => 'Shop Maui Jim Men',
-					'href' 	=> '/men/brands/maui-jim.html'
+					'href' 	=> 'men/brands/maui-jim.html'
 				),
 				array(
 					'title' => 'Shop Maui Jim Women',
-					'href' 	=> '/women/brands/maui-jim.html'
+					'href' 	=> 'women/brands/maui-jim.html'
 				)
 			),
 			'left-bottom-1' => array(
 				array(
 					'title' => 'Shop Dior Home Composit',
-					'href' 	=> '/brands/dior/composit-010.html'
+					'href' 	=> 'brands/dior/composit-010.html'
 				)
 			),
 			'left-bottom-2' => array(
 				array(
 					'title' => 'Shop Maui Jim Men',
-					'href' 	=> '/men/brands/maui-jim.html'
+					'href' 	=> 'men/brands/maui-jim.html'
 				),
 				array(
 					'title' => 'Shop Maui Jim Women',
-					'href' 	=> '/women/brands/maui-jim.html'
+					'href' 	=> 'women/brands/maui-jim.html'
 				)
 			),
 			'right' => array(
 				array(
 					'title' => 'Shop Miu Miu 12QS',
-					'href' 	=> '/brands/miu-miu/12qs.html'
+					'href' 	=> 'brands/miu-miu/12qs.html'
 				)
 			)
 		)
