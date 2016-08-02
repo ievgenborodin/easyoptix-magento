@@ -6,7 +6,7 @@ class Kine_Easyoptix_Model_Bannerwall extends Mage_Core_Model_Abstract
 			'left-top' => array(
 				array(
 					'title' => 'Shop Ray-Ban Men',
-					'href' 	=> '/men/brands/ray-ban.html'
+					'href' 	=> 'men/brands/ray-ban.html'
 				),
 				array(
 					'title' => 'Shop Ray-Ban Women',

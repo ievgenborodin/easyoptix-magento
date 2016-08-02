@@ -3,6 +3,7 @@
 	$b = $bannerwallModel->getBannersData(); 
 	$eyewear_type = $bannerwallModel->getEyewearType();
 	$img_path = $this->getSkinUrl('images/media/banners') . '/' . $eyewear_type;
+	$base = $this->getUrl('');
 ?>
 
 <div class="content-banner">
@@ -20,17 +21,15 @@
 
 			                        <div class="darkness-btn-box">
 			                        <?php $curr_b = $b['left-top'][0];
-			                        	$curr_url = $eyewear_type . '/' . $curr_b['href'];
 			                        	$curr_title = $curr_b['title']; 
 			                        ?>
-			                            <a href="<?php echo $curr_url ?>" class="darkness-btn right"><?php echo $curr_title ?></a>
+			                            <a href="<?php echo $base . $curr_b['href'] ?>" class="darkness-btn right"><?php echo $curr_title ?></a>
 			                        </div>                
 			                        <div class="darkness-btn-box">
 			                        <?php $curr_b = $b['left-top'][1];
-			                        	$curr_url = $eyewear_type . '/' . $curr_b['href'];
 			                        	$curr_title = $curr_b['title']; 
 			                        ?>
-			                            <a href="<?php echo $this->getUrl($curr_url) ?>" class="darkness-btn left"><?php echo $curr_title ?></a>
+			                            <a href="<?php echo $base . $curr_b['href'] ?>" class="darkness-btn left"><?php echo $curr_title ?></a>
 			                        </div>                     
 			                    </div>
 		                    </div>
@@ -52,9 +51,8 @@
 				                    <div class="darkness-content">                      
 				                        <div class="darkness-btn-box">
 				                        <?php $curr_b = $b['left-bottom-1'][0];
-			                        		$curr_url = $eyewear_type . '/' . $curr_b['href'];
 			                        		$curr_title = $curr_b['title']; ?>
-			                            <a href="<?php echo $this->getUrl($curr_url) ?>" class="darkness-btn"><?php echo $curr_title ?></a>
+			                            <a href="<?php echo $base . $curr_b['href'] ?>" class="darkness-btn"><?php echo $curr_title ?></a>
 				                        </div>                   
 				                    </div>
 			                    </div>
@@ -75,15 +73,13 @@
 				                    <div class="darkness-content">                      
 				                        <div class="darkness-btn-box">
 				                        <?php $curr_b = $b['left-bottom-2'][0];
-			                        		$curr_url = $eyewear_type . '/' . $curr_b['href'];
 			                        		$curr_title = $curr_b['title']; ?>
-			                            <a href="<?php echo $this->getUrl($curr_url) ?>" class="darkness-btn right"><?php echo $curr_title ?></a>
+			                            <a href="<?php echo $base . $curr_b['href'] ?>" class="darkness-btn right"><?php echo $curr_title ?></a>
 				                        </div>                
 				                        <div class="darkness-btn-box">
 				                        <?php $curr_b = $b['left-bottom-2'][1];
-			                        		$curr_url = $eyewear_type . '/' . $curr_b['href'];
 			                        		$curr_title = $curr_b['title']; ?>
-			                            <a href="<?php echo $this->getUrl($curr_url) ?>" class="darkness-btn left"><?php echo $curr_title ?></a>
+			                            <a href="<?php echo $base . $curr_b['href'] ?>" class="darkness-btn left"><?php echo $curr_title ?></a>
 				                        </div>                     
 				                    </div>
 			                    </div>
@@ -105,9 +101,8 @@
 			                    <div class="darkness-content">                      
 			                        <div class="darkness-btn-box">
 				                        <?php $curr_b = $b['right'][0];
-			                        		$curr_url = $eyewear_type . '/' . $curr_b['href'];
 			                        		$curr_title = $curr_b['title']; ?>
-			                            <a href="<?php echo $this->getUrl($curr_url) ?>" class="darkness-btn"><?php echo $curr_title ?></a>
+			                            <a href="<?php echo $base . $curr_b['href'] ?>" class="darkness-btn"><?php echo $curr_title ?></a>
 				                    </div>                     
 			                    </div>
 		                    </div>
