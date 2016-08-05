@@ -2865,22 +2865,22 @@ img.big { padding: 30px; }
 
 /*////////       buttons        ////////////*/
 
-a.light-btn, 
-a.dark-btn { display: inline-block; padding: .75em 2em; font-size: 1.1em; 
+.light-btn, 
+.dark-btn { display: inline-block; padding: .5em 1.5em; font-size: 1.1em; 
 	text-transform: uppercase; cursor:pointer; }
 
-a.light-btn:link { color: #000; background-color: #fff; border: 1px solid #111; }
-a.light-btn:visited { color: #000; background-color: #fff; border: 1px solid #111; }
-a.light-btn:hover {color: #fff; background-color: #000; border: 1px solid #eee; }
-a.light-btn:active { color: #000; background-color: #fff; border: 1px solid #111; }
+.light-btn, .light-btn:link { color: #000; background-color: #fff; border: 1px solid #111; }
+.light-btn:visited { color: #000; background-color: #fff; border: 1px solid #111; }
+.light-btn:hover {color: #fff; background-color: #000; border: 1px solid #eee; }
+.light-btn:active { color: #000; background-color: #fff; border: 1px solid #111; }
 
-a.dark-btn:link {color: #eee; background-color: #000; border: 1px solid #555;}
-a.dark-btn:visited {color: #eee; background-color: #000; border: 1px solid #555;}
-a.dark-btn:hover {color: #fff; background-color: #000; border: 1px solid #999;}
-a.dark-btn:active {color: #eee; background-color: #000; border: 1px solid #555;}
+.dark-btn, .dark-btn:link {color: #eee; background-color: #000; border: 1px solid #555;}
+.dark-btn:visited {color: #eee; background-color: #000; border: 1px solid #555;}
+.dark-btn:hover {color: #fff; background-color: #000; border: 1px solid #999;}
+.dark-btn:active {color: #eee; background-color: #000; border: 1px solid #555;}
 
-a.light-btn, a.light-btn:hover,
-a.dark-btn, a.dark-btn:hover { transition: background-color .1s, color .1s; }
+.light-btn, .light-btn:hover,
+.dark-btn, .dark-btn:hover { transition: background-color .1s, color .1s; }
 
 .tpad { padding-top: 30px; }
 
