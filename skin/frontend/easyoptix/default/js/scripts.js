@@ -399,7 +399,7 @@ jQuery(document).ready(function() {
 				// timer
 				jQuery.data(theWindow, 'hoverIn', setTimeout(function() {
 					setSubMenu(thisId, that);
-				}, 300));
+				}, 200));
 			}
 		}, function(e){
 			//timer
