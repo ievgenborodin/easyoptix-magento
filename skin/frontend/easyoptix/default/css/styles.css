@@ -2874,10 +2874,10 @@ a.light-btn:visited { color: #000; background-color: #fff; border: 1px solid #11
 a.light-btn:hover {color: #fff; background-color: #000; border: 1px solid #eee; }
 a.light-btn:active { color: #000; background-color: #fff; border: 1px solid #111; }
 
-a.dark-btn:link {color: #eee; background-color: #111; border: 1px solid #555;}
-a.dark-btn:visited {color: #eee; background-color: #111; border: 1px solid #555;}
+a.dark-btn:link {color: #eee; background-color: #000; border: 1px solid #555;}
+a.dark-btn:visited {color: #eee; background-color: #000; border: 1px solid #555;}
 a.dark-btn:hover {color: #fff; background-color: #000; border: 1px solid #999;}
-a.dark-btn:active {color: #eee; background-color: #111; border: 1px solid #555;}
+a.dark-btn:active {color: #eee; background-color: #000; border: 1px solid #555;}
 
 a.light-btn, a.light-btn:hover,
 a.dark-btn, a.dark-btn:hover { transition: background-color .1s, color .1s; }
