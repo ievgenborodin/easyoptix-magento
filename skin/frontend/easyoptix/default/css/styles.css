@@ -2863,19 +2863,24 @@ img.big { padding: 30px; }
 #back-top span {display: block;	 text-align: center; }
 #back-top span:before {content: "\f139"; font-size: 51px;  line-height: 45px;}
 
-/*////////       etc        ////////////*/
+/*////////       buttons        ////////////*/
 
-.ez-btn, 
-.ez-btn:active,
-.ez-btn:visited { display: inline-block;
-    padding: .75em 2em;
-    font-size: 1.1em;
-    border: 1px solid #111;
-    background-color: #000;
-    color: #fff;
-    opacity: 1;
-    text-transform: uppercase; }
-.ez-btn:hover { opacity: 1; transition: background-color .1s, color .1s; cursor: pointer; }
+a.light-btn, 
+a.dark-btn { display: inline-block; padding: .75em 2em; font-size: 1.1em; 
+	text-transform: uppercase; cursor:pointer; }
+
+a.light-btn:link { color: #000; background-color: #fff; border: 1px solid #111; }
+a.light-btn:visited { color: #000; background-color: #fff; border: 1px solid #111; }
+a.light-btn:hover {color: #fff; background-color: #000; border: 1px solid #eee; }
+a.light-btn:active { color: #000; background-color: #fff; border: 1px solid #111; }
+
+a.dark-btn:link {color: #eee; background-color: #111; border: 1px solid #555;}
+a.dark-btn:visited {color: #eee; background-color: #111; border: 1px solid #555;}
+a.dark-btn:hover {color: #fff; background-color: #000; border: 1px solid #999;}
+a.dark-btn:active {color: #eee; background-color: #111; border: 1px solid #555;}
+
+a.light-btn, a.light-btn:hover,
+a.dark-btn, a.dark-btn:hover { transition: background-color .1s, color .1s; }
 
 .tpad { padding-top: 30px; }
 
@@ -2888,8 +2893,6 @@ img.big { padding: 30px; }
 .sunglasses { margin-left: .5%; background: url(../images/eyewear-sunglasses.jpg) 0 0 no-repeat; }
 .eyewear-sides-inner { position: absolute; bottom: 0; left: 0%; width: 100%; height: 41%; text-align: center; }
 .eyewear-sides-inner > h2 { text-shadow: -1px -1px .5px #aaa; color: #ffffff; font-size: 3em; cursor: default; }
-.eyewear-sides-inner > .ez-btn {  }
-.eyewear-sides-inner > .ez-btn:hover { border: 1px solid #fff; color: #fff; }
 
 /* ///////////////////////////     rx block        ///////////////////////////// */
 
@@ -2899,9 +2902,7 @@ img.big { padding: 30px; }
 .rx-left > img { display: block; width: 100%; opacity:.95; }
 .eyewear-rx-inner {  }
 .eyewear-rx-inner > h3 { color: #111; margin-top: 1em; }
-.eyewear-rx-inner > p { color: #777;  }
-.eyewear-rx-inner > .ez-btn { background: none; color: #111; margin-top: 1.5em;  border: 1px solid #000; }
-.eyewear-rx-inner > .ez-btn:hover { color: #fff; background-color: #111; transition: color .1s, background-color .2s; } 
+.eyewear-rx-inner > p { color: #777; margin-bottom: 1em; }
 
 /* ///////////////////////////     new items        //////////////////////////////////*/
 .new-glasses-block-wrap{ width: 100%; height: 300px; background-color: #eee; }
@@ -3068,9 +3069,6 @@ h3 { font-size: 18px; line-height: 2; }
 .title-holder { position: absolute; bottom: 0; width: 100%; }
 .random-product-title {}
 .random-product-price {}
-
-.ez-btn:visited,
-.ez-btn:active { color: #fff; }
 
 /* Footer ================================================================================ */
 .footer{ position: relative; width: 100%; background: url(../images/email-list-768.jpg) 0 0 no-repeat; background-size:cover; }
