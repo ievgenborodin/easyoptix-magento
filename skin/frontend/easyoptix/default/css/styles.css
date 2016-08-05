@@ -2865,7 +2865,9 @@ img.big { padding: 30px; }
 
 /*////////       etc        ////////////*/
 
-.ez-btn { display: inline-block;
+.ez-btn, 
+.ez-btn:active,
+.ez-btn:visited { display: inline-block;
     padding: .75em 2em;
     font-size: 1.1em;
     border: 1px solid #111;
