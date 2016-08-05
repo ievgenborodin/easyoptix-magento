@@ -1638,13 +1638,12 @@ span.availability.out-of-stock { color:#d83820; }
 .add-to-cart .paypal-logo .paypal-or { clear:both; display:block; margin:5px 46px 5px 0; }
 .product-view .add-to-cart .paypal-logo { margin:0; display:none; }
 
-#add-lense { float:left; padding: 10px; }
-#add-lense span {    line-height: 44px;
-    height: 44px;
+#add-lense { display: block; float: left; margin: 10px; }
+#add-lense span { display: inline-block;
+    padding: 0 10px;
     font-size: 16px;
-    background-color: #fff;
-    border: 1px solid #222; }
-#add-lense a { color: #222; padding: 0 10px; }
+    line-height: 42px;
+    border: 1px solid; }
 
 /* Add to Links + Add to Cart */
 .add-to-box {}

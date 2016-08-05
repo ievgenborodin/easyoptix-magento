@@ -82,7 +82,7 @@
                         <?php echo $this->getChildHtml('addtocart') ?>
                         <?php if ($_product->getData('prescription_ready')) : ?>
                             <?php $rx_product = $product_model->loadByAttribute('sku', 'rx_' . $_product->getSku()); ?>
-                            <button type="button" data-sku="<?php echo 'rx_' . $_product->getSku()?>" class="button" id="add-lense"><span><a href="<?php echo $rx_product->getProductUrl(); ?>"><?php echo $this->__('Add Prescription Lenses'); ?></a></span></button>
+                            <a id="add-lense" href="<?php echo $rx_product->getProductUrl(); ?>" data-sku="<?php echo 'rx_' . $_product->getSku()?>"><span>Add Prescription Lenses</span></a>
                         <?php endif; ?>
                         <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
                             <span class="or"><?php echo $this->__('OR') ?></span>
