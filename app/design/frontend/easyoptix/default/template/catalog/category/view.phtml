@@ -13,7 +13,8 @@
 ?>
 
 <div class="category-header">
-    <div class="category-image-wrap" style="background-image: url(<?php echo $_category->getImageUrl() ?>)">
+    <div class="category-image-wrap">
+        <img src="<?php echo $_category->getImageUrl() ?>">
         <span class="category-minititle"><?php echo $_cat_title ?></span>
         <?php// if($_imgUrl = $_category->getImageUrl()): ?>
             <?php// echo $_helper->categoryAttribute($_category, "<p class='category-image'><img src=" . $_imgUrl . "></p>", 'image') ?>

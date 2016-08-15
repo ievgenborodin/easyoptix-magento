@@ -455,6 +455,17 @@ jQuery(document).ready(function() {
 			currSubMenu.stop(true).fadeOut(400).removeClass('active');
 		}
 
+		(jQuery(window).width()>767) && jQuery(window).scroll(function(){
+			var that = jQuery('.eyewear-side');
+			(that.length) && afixed(that);
+		});
+		function afixed(that){
+			var currScroll = jQuery(this).scrollTop(),
+			maxHeightRaw = that.css('max-height'),
+			maxHeight = maxHeightRaw.substr(0, maxHeightRaw.length -2);
+			newHeight = maxHeight - currScroll*0.5;
+			(newHeight > 0) ? that.css('height', newHeight) : that.css('height', 0);
+		};
 		/* ========================== */
 		
 

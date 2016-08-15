@@ -377,12 +377,24 @@ jQuery(document).ready(function(){
             });
     };
 
+    function afixed(that){
+        var currScroll = jQuery(this).scrollTop(),
+        maxHeightRaw = that.css('max-height'),
+        maxHeight = maxHeightRaw.substr(0, maxHeightRaw.length -2);
+        newHeight = maxHeight - currScroll*0.5;
+        (newHeight > 0) ? that.css('height', newHeight) : that.css('height', 0);
+    };
+
     var theWindow = jQuery(window),
-        fsWrap = jQuery('.fs-wrap');
+        fsWrap = jQuery('.fs-wrap'),
+        fsTopCatch;
+
+    // top point to catch filters menu
+    fsTopCatch = (theWindow.width() < 1023) ? 150 : 95; 
 
     // first auto start
     getVisibles();
-    if (theWindow.scrollTop()>155)
+    if (theWindow.scrollTop()>fsTopCatch)
         fsWrap.addClass('fix');
     else 
         fsWrap.removeClass('fix');
@@ -392,7 +404,11 @@ jQuery(document).ready(function(){
     theWindow.scroll(function() {
     	var scrol = jQuery(this).scrollTop(),
     	invisibles = jQuery('.product-img.hid').length;
-        if (scrol>155)
+
+        var currafix = jQuery('.category-image-wrap');
+        (currafix.length) && (theWindow.width()>767) && afixed(currafix);
+
+        if (scrol>fsTopCatch)
             fsWrap.addClass('fix');
         else 
             fsWrap.removeClass('fix');

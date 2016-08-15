@@ -28,12 +28,12 @@
     <?php $_collectionSize = $_productCollection->count() ?>
     <?php $img_helper = $this->helper('catalog/image'); ?>
 
-    <div class="fs-shifter"></div>
+    <div class="fs-shifter">
     <div class="fs-wrap">
         <div class="fs">
             <div class="fs-left">
                 <div class="fs-filters-switch">
-                    <span id="filters-switch">Filter</span>
+                    <span id="filters-switch"><i class="fa"></i> Filter</span>
                 </div>
                 <div class="fs-filters-reset">
                     <span id="filters-reset"><i class="fa fa-times"></i> reset filters</span>
@@ -55,7 +55,7 @@
             </div>
         </div>
     </div>
-    
+    </div>
     <div class="category-products">
     <ul class="row product-rows">
     <?php $i=0; foreach ($_productCollection as $_product): ?>
