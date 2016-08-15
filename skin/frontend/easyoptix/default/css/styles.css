@@ -2867,7 +2867,8 @@ img.big { padding: 30px; }
 
 /*////////       buttons        ////////////*/
 
-.light-btn, 
+.light-btn,
+.white-btn, 
 .dark-btn { display: inline-block; padding: .5em 1.5em; font-size: 1.1em; 
 	text-transform: uppercase; cursor:pointer; }
 
@@ -2875,6 +2876,11 @@ img.big { padding: 30px; }
 .light-btn:visited { color: #000; background-color: #fff; border: 1px solid #111; }
 .light-btn:hover {color: #fff; background-color: #000; border: 1px solid #eee; }
 .light-btn:active { color: #000; background-color: #fff; border: 1px solid #111; }
+
+.white-btn, .white-btn:link { color: #333; background-color: #fff; border: 1px solid #999; }
+.white-btn:visited { color: #333; background-color: #fff; border: 1px solid #999; }
+.white-btn:hover {color: #000; background-color: #fff; border: 1px solid #111; }
+.white-btn:active { color: #333; background-color: #fff; border: 1px solid #999; }
 
 .dark-btn, .dark-btn:link {color: #eee; background-color: #000; border: 1px solid #555;}
 .dark-btn:visited {color: #eee; background-color: #000; border: 1px solid #555;}

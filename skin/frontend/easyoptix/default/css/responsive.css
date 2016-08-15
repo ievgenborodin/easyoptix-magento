@@ -60,7 +60,7 @@
 ** ====================================== */
 @media only screen and (min-width:531px) {
 	.eyewear-sides-inner > h2 { text-shadow: -1px -1px .5px #000; font-size: 3em; }
-	a.light-btn, a.dark-btn { padding: .75em 2em; }
+	a.light-btn, a.white-btn, a.dark-btn { padding: .75em 2em; }
 	.product-rows li { width: 33.33333333%; }
 	.product-rows li:nth-child(even) {border-right: 1px solid #eee; border-left:1px solid #eee;}
 	.category-image-wrap { width: 100%; background-size: cover; }
@@ -1361,7 +1361,7 @@
 	.swipe-menu .child-col { width: 50%;}
 	.eyewear-sides-inner > h2 { text-shadow: -1px -1px 1px #000; font-size: 2.5em; }
 	.couponletter-left { width: 73%; margin: 0 5%; }
-	a.light-btn, a.dark-btn { padding: .5em 1.5em; }
+	a.light-btn, a.white-btn, a.dark-btn { padding: .5em 1.5em; }
 }
 
 /* ====================================== *
