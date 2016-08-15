@@ -557,7 +557,7 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 .sort-section-body ul { padding:0; text-align: center; display: inline-block;}
 .sort-section-body ul li { float: left; padding: 5px 20px; color: #777; cursor: pointer; }
 
-.category-minititle { display: none; position:absolute; right: 5px; bottom: 5px; color: #fff; z-index: 40; }
+.category-minititle { display: none; position:absolute; right: 5px; bottom: 5px; color: #fff; text-shadow: 1px 1px #333; z-index: 40; }
 
 .category-title-wrap h1 { margin-top:0; }
 
