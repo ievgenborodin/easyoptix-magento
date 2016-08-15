@@ -90,7 +90,13 @@
                 </div>
               </div>
               <div class="header-r-bottom">
-                <?php echo $this->getChildHtml('topLinks') ?>
+                <?php if ($this->helper('customer')->isLoggedIn()) : ?>
+                  <?php echo $this->getChildHtml('topLinks') ?>
+                <?php else : ?>
+                  <ul>
+                    <li class="last"><a href="<?php echo $this->getUrl('customer/account/login/') ?>">Login</a></li>
+                  </ul>
+                <?php endif ?>
               </div>
             </div>
           </div>
