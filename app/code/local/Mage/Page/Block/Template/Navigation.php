@@ -7,13 +7,13 @@ class Mage_Page_Block_Template_Navigation extends Mage_Core_Block_Template
 
 	protected $special_cats = array(
 		'Men' => array(
-			'name' => 'Ray-Ban 2178',
-			'url' => 'men-special',
+			'name' => 'Dior Homme COMPOSIT',
+			'url' => 'brands/dior/composit-010.html',
 			'image' => 'images/media/banners/minibanner-men.jpg'
 		),
 		'Women' => array(
-			'name' => 'Miu miu',
-			'url'  => 'women-special',
+			'name' => 'Ray-Ban RB4222',
+			'url'  => 'women/sunglasses/rb4222-61684v.html',
 			'image' => 'images/media/banners/minibanner-women.jpg'
 		)
 	);
