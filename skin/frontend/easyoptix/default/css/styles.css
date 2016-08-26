@@ -52,6 +52,29 @@ html { height: 100%; width: 100%; }
   font-family: 'Roboto';
   src: url('../fonts/Roboto-Regular.ttf') format('truetype');
 }
+@font-face {
+	font-family: 'Darleston';
+	src: url("../fonts/Darleston.otf") format("opentype");
+}
+@font-face {
+  font-family: 'Allura';
+  src: url('../fonts/Allura.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Aguafina';
+  src: url('../fonts/Aguafina.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Adine-Kirnberg';
+  src: url('../fonts/Adine-Kirnberg.ttf') format('truetype');
+}
+.brand-moto {     
+	font-family: 'Adine-Kirnberg';
+    color: #356799;
+    font-size: 2.4em;
+    opacity: .9;
+    line-height: 1;
+}
 
 body { 
 	font-size:14px; 
@@ -598,7 +621,7 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 .sort-block-title > span { text-align: left; width: 100%; display: inline-block; }
 
 /*end new fs*/
-
+.block-section-separator { width: 100%; min-height:1px; }
 
 .filter { text-align: left; margin: 10px 0 20px; color: #666; border-bottom: 1px solid #ccc;  padding-bottom: 10px; }
 .category-leftfilter-header h3 { font-style: italic; font-weight: 300; color: #777; border-bottom: 1px solid #aaaaaa; margin-bottom: 30px; }
@@ -2913,7 +2936,8 @@ img.big { padding: 30px; }
 .rx-left > img { display: block; width: 100%; opacity:.95; }
 .eyewear-rx-inner {  }
 .eyewear-rx-inner > h3 { color: #111; margin-top: 1em; }
-.eyewear-rx-inner > p { color: #777; margin-bottom: 1em; }
+.eyewear-rx-inner > p { color: #777; margin-bottom: 1.5em;
+    line-height: 1.5; }
 
 /* ///////////////////////////     new items        //////////////////////////////////*/
 .new-glasses-block-wrap{ width: 100%; height: 300px; background-color: #eee; }
@@ -2932,7 +2956,7 @@ img.big { padding: 30px; }
 .eyewear-instagram-wrap { clear: both; width: 100%; position: relative; }
 .eyewear-instagram { position: relative; width: 100%; height: 100%;  }
 .eyewear-instagram .instagram-title { width: 100%; height: auto; text-align: center; }
-.instagram-cols { display:inline-block; width: 90%; position: relative; margin: 0 5%; height: auto; }
+.instagram-cols { display:inline-block; width: 99%; position: relative; margin: 0 auto; height: auto; }
 .instagram-cols > div { float: left; position: relative; width: 33.33333333%; padding: .5em; height: auto; }
 .instagram-col > img { display: block; width: 100%; height: auto; }
 
@@ -3088,7 +3112,8 @@ h3 { font-size: 18px; line-height: 2; }
 .footer-content { position: absolute; bottom: 0; left: 0; width: 100%; text-align: center; }
 .footer-content .footer-header { margin-bottom: 1em; }
 .footer-content .footer-header h3 {}
-.footer-content .footer-header p {}
+.footer-content .footer-header p {  }
+.brand-moto { font-family: ; }
 .footer-content .footer-foldercols { width: 100%; height: auto; }
 .footer-content .footer-folder-wrap { clear: both; width: 100%; height: auto;}
 .footer-content .footer-folder { height: auto; padding: .5em; border: 1px solid #707070; position: relative; }

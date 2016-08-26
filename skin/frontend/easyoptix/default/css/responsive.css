@@ -2,7 +2,7 @@
 /* ///////////////////////        M I N      ////////////////////////*/
 
 /* ====================================== *
- *		min 180
+ *		min 400
 ** ====================================== */
 @media only screen and (min-width:400px) {
 	.fs-filters-ul > li { min-width: 48%; margin: 1%; }
@@ -10,7 +10,6 @@
     bottom: 10px;
     font-size: 20px;}
     .block-section-separator {     margin: 2em auto;
-    border-top: 1px solid #eee;
     width: 85%;}
 
     .eyewear-couponletter > .couponletter-left {
@@ -21,7 +20,7 @@
     right: 55%;
 	}
 	.eyewear-couponletter > div { float: right;}
-	.eyewear-rx-wrap > .block-section-separator:first-child { display: none; }
+	.eyewear-rx-wrap > .block-section-separator:first-child { margin: 1.5em auto; }
 }
 
 /* ====================================== *
@@ -205,7 +204,7 @@
 
 	.bw-vert { width: 33.333333333%; height: 100%; float: none; position: absolute; top: 0; right: 0; }
 
-	.footer 						{ height: 52vw; }
+	.footer 						{ height: 56vw; }
 	.footer-logo 					{ max-width: 23%; }
 	.footer-social-block li i 		{ width: 1.5em; height: 1.5em; line-height: 1.5em; }
 	.footer-social-block 			{ margin-top: 1.5em; }
@@ -556,7 +555,7 @@
   	.eyewear-couponletter-wrap { width: 70%; margin: 0 15% -2.5em; }
   	.couponletter-left > img { padding: 1em; position: absolute; top: 3em; }
   	.qm-input-area > textarea { height: calc(100% - 2em); }
-  	.block-section-separator { width: 100%; min-height:1px; margin-top:3em; }
+  	.block-section-separator { margin-top:3em; }
 
 	.container { max-width: 1200px; width: 1200px; }
 	.lensmaterial-block{ width: 100%; }
@@ -1212,10 +1211,7 @@
   .btn-dior { left: 15%; bottom: 15%; }
   .btn-ray-ban { left: 25%; top: 10%; }
   .btn-miu-miu { left: 10%; bottom: 15%; }
-  .btn-maui-jim { left: 10%; bottom: 20%; }
-  .btn-costa-del-mar { left: 30%; bottom: 20%; }
-  .btn-oakley { left: 30%; bottom: 20%; }
-  
+  .btn-maui-jim { left: 10%; bottom: 20%; }  
   
   .content-banner {position: relative; width: 90%; margin-left: 5%; }
 	.bannerwall-wrap { position: relative; width: 100%; padding-bottom: 150%;}
@@ -1242,22 +1238,21 @@
 
 	.eyewear-instagram-wrap { margin:0;}
 .eyewear-couponletter > div { float:none;display:inline-block; bottom:0; right:0; }
-.eyewear-couponletter > .couponletter-left { width: 50%;
+.eyewear-couponletter > .couponletter-left { width: 60%;
     position: relative;
     bottom: 0;
     right: 0;}
     .eyewear-couponletter > .couponletter-right {
     width: 100%;}
-	.eyewear-rx-wrap { margin: 2em 0 1em; }
 	.rx-left > img { display: inline-block; width: 70%; } 
 	.eyewear-rx-inner > h3 { font-size: 2em; }
 	.eyewear-rx-inner > p { font-size: 16px; }
 	.eyewear-couponletter-inner > h3 { font-size:2em; }
 	.eyewear-couponletter-inner > p {
     color: #777;
-    padding: 0 1em;
+    padding: 0;
     font-size: 15px;
-    line-height: 1.3;}
+    line-height: 1.5;}
     .couponletter-left > img {  width: 90%;}
     .block-section-separator {     margin: 2em auto; }
 }
@@ -1285,7 +1280,6 @@
     .mobile-toplinks-nav .links .first { padding-left: 0; }
 	.footer { height: 64vw; }
 	.couponletter-left > img {  width: 100%;} 
-	.block-section-separator {     margin: 1em auto; }
 }
 
 /* ====================================== *
@@ -1403,6 +1397,7 @@
 ** ====================================== */
 @media only screen and (max-width: 449px) {
 	.swipe { width: 100%; }
+	.eyewear-couponletter > .couponletter-left { width: 70%; }
 }
 
 /* ====================================== *
