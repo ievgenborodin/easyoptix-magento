@@ -1557,7 +1557,7 @@ span.availability.out-of-stock { color:#d83820; }
 /* Old price */
 .old-price { }
 .old-price .price-label { white-space:nowrap; }
-.old-price .price { text-decoration:line-through; }
+.old-price .price { color: #aaa; text-decoration:line-through; }
 
 /* Special price */
 .special-price { color: #356799; }
@@ -1801,6 +1801,7 @@ img.big { padding: 30px; }
 
 
 .product-view .product-shop .price-box .price { color: #356799; font-weight: normal; font-size: 24px; line-height: 24px;}
+.product-view .product-shop .price-box .old-price .price { color: #aaa; font-size: 20px; }
 .product-view .product-shop .price-box .old-price .price {  }
 .product-view .product-shop .availability {display: block; font-size:12px; font-weight:bold; color:#3a3a3a; line-height: 22px;}
 .product-view .product-shop span.availability  { display:inline-block; font-size:12px; line-height:30px; font-weight:bold; color:#74b436; margin-left:20px;}
