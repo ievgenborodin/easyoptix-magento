@@ -28,12 +28,7 @@ class Mage_Page_Block_Template_Navigation extends Mage_Core_Block_Template
 			'name' => 'Sunglasses',
 			'url' => 'sunglasses',
 			'image' => ''
-		),
-		'2' => array(
-			'name' => 'Prescription Sunglasses',
-			'url' => 'prescription-sunglasses',
-			'image' => ''
-		),
+		)
 	);
 
 

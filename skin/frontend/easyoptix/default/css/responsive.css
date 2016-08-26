@@ -24,9 +24,8 @@
 	.eyewear-rx-wrap > .block-section-separator:first-child { display: none; }
 }
 
-
 /* ====================================== *
- *		max 450
+ *		min 450
 ** ====================================== */
 @media only screen and (min-width: 450px) {
 	.swipe { width: 450px; }
@@ -1416,10 +1415,11 @@
 }
 
 /* ====================================== *
- *		max 435
+ *		max 436
 ** ====================================== */
-@media only screen and (max-width: 435px) {
+@media only screen and (max-width: 436px) {
 	.footer-social-block { margin-top: 2em; }
+	.eyewear-rx-inner>h3 { font-size: 1.8em; }
 } 
 
 /* ====================================== *
@@ -1431,14 +1431,16 @@
 } 
 
 /* ====================================== *
- *		max 390
+ *		max 392
 ** ====================================== */
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 392px) {
     .mobile-toplinks-nav .links li {  padding: 6px;}
     .mobile-toplinks-nav .links .first { padding-left: 0; }
     .banner-nav{ height: 110px;}
-
+    .eyewear-rx>div { position: relative; width: 80%; margin: 0 10%; }
+    .eyewear-rx-inner>h3 { font-size: 1.7em; }
     .swipe-menu .child3 > li, .swipe-menu .child4 > li { width: 33.333333333%; padding: .8em; }
+    .footer { height: 84vw; }
 }
 
 /* ====================================== *
