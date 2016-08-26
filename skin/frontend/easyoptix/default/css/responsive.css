@@ -934,6 +934,11 @@
 	.addthis_default_main .addthis_counter {clear:inherit;}
 	.product-view .product-options-bottom {margin-bottom: 20px;}
 
+
+	.related-products-header { font-size: 22px; } 
+	.related-products ul li { width: 31%; }
+
+
 	.block-slider-sidebar {display: none !important;}
 	
 	.product-collateral #customer-reviews #product-review-table span.nobr {padding:0;}

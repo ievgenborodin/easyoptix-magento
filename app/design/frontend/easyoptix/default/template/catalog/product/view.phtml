@@ -208,4 +208,40 @@
     //]]>
     </script>
     </div>
+
+    <?php if (!$this->hasOptions()):?>
+        <?php 
+            // related model
+            $related_model = Mage::getModel('easyoptix/relatedproducts');
+            // set relation attributes
+            $curr_item_name = $_product->getData('name');
+            $curr_brand = $_product->getData('brand');
+            $curr_style = $_product->getData('style');
+            $related_model->setRelatedProducts($curr_item_name, $curr_brand, $curr_style); 
+            // get related products
+            $related_products = $related_model->getRelatedProducts();
+        ?>
+        <div class="related-products-wrap">
+            <h3 class="related-products-header">Related Products</h3>
+            <div class="related-products">
+             <ul>
+                 <?php foreach ($related_products as $p) : ?>
+                 <li>
+                     <a class="related-product-a" href="<?php echo $this->helper('catalog/product')->getProductUrl($p) ?>">
+                         <div class="image-holder">
+                             <img src="<?php echo $this->helper('catalog/image')->init($p, 'small_image')->resize(300,200) ?>"/>
+                         </div>
+                         <div class="title-holder">
+                             <div class="related-product-title"><?php echo $p->getName() ?></div>
+                             <div class="related-product-price">
+                                 $<?php echo number_format($p->getPrice(), 2) ?>
+                             </div>
+                         </div>
+                     </a>
+                 </li>
+                 <?php endforeach ?>
+             </ul>
+            </div>
+        </div>
+    <?php endif ?>
 </div>

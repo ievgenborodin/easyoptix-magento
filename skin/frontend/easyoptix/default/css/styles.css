@@ -212,7 +212,7 @@ button.button span:before,
 .page-empty { background:#fff; padding:20px; text-align:left; }
 .page-popup { padding:20px; text-align:left; margin:0 auto; background:#fff;}
 .page-popup  .ratings .rating-box {float:none; margin:0 auto 10px;}
-.main-container { padding:5px 0 0; position:relative; z-index:1; }
+.main-container { padding:7px 0 0; position:relative; z-index:1; }
 
 /* Base Columns */
 .col-left { float:left; }
@@ -1663,6 +1663,19 @@ span.availability.out-of-stock { color:#d83820; }
 .add-to-cart .paypal-logo { clear:left; text-align:right; }
 .add-to-cart .paypal-logo .paypal-or { clear:both; display:block; margin:5px 46px 5px 0; }
 .product-view .add-to-cart .paypal-logo { margin:0; display:none; }
+
+/* Related Products */
+.related-products-wrap {  }
+.related-products-header { font-weight: 300;  color: #084b65; margin: 0; }
+.related-products { }
+.related-products ul {  }
+.related-products ul li { display:inline-block; width: 20%; padding: 0 10px; margin: 0 auto; }
+.related-product-a .image-holder {  }
+.related-product-a .title-holder { position:relative; }
+.related-product-title {  }
+.related-product-price { color: #356799; }
+
+
 
 #add-lense { display: block; float: left; margin: 10px; }
 #add-lense span { display: inline-block;
