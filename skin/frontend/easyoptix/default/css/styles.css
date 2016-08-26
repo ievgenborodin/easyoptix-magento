@@ -1556,13 +1556,15 @@ span.availability.out-of-stock { color:#d83820; }
 
 /* Old price */
 .old-price { }
-.old-price .price-label { font-weight:bold; white-space:nowrap; }
-.old-price .price { font-weight:bold; text-decoration:line-through; }
+.old-price .price-label { white-space:nowrap; }
+.old-price .price { text-decoration:line-through; }
 
 /* Special price */
-.special-price {}
-.special-price .price-label { font-weight:bold; }
-.special-price .price { font-weight:bold; }
+.special-price { color: #356799; }
+.special-price .price-label {  }
+.special-price .price {  }
+
+.price-box p { font-size: 14px; }
 
 /* Minimal price (as low as) */
 .minimal-price { color: #356799; font-size: 12px; }
