@@ -13,7 +13,7 @@ class Kine_Easyoptix_Model_Relatedproducts extends Mage_Core_Model_Abstract
 		$this->_style = isset($style) ? $style : '';
 	}
 
-	public function getRelatedProducts($maxCount = 5)
+	public function getRelatedProducts($maxCount = 4)
 	{
 		$relatedProducts = array();
 		$allProducts = array();
