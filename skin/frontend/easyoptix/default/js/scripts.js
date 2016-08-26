@@ -417,7 +417,7 @@ jQuery(document).ready(function() {
 				currSubMenu = '';
 				currSubMenuTitle = '';
 				//udjust height
-				innerNav.stop(true).animate({ height: 0 }, 400).css('border-bottom', 'none');
+				innerNav.stop(true).animate({ height: 0 }, 300).css('border-bottom', 'none');
 			}, 400));
 		});
 
@@ -439,9 +439,9 @@ jQuery(document).ready(function() {
 			that.find('span').hide();
 			that.addClass('active').find('a').show();
 			//show new submenu
-			currSubMenu.stop(true).fadeIn(400).addClass('active');
+			currSubMenu.stop(true).fadeIn(300).addClass('active');
 			//udjust height
-			innerNav.stop(true).animate({ height: newHeight }, 400).css('border-bottom', '1px solid #909090');
+			innerNav.stop(true).animate({ height: newHeight }, 300).css('border-bottom', '1px solid #909090');
 		};
 
 		function secureHeight(that){
@@ -452,7 +452,7 @@ jQuery(document).ready(function() {
 			navParent.find('span').show();
 			navParent.removeClass('active').find('a').hide();
 			//hide old submenu
-			currSubMenu.stop(true).fadeOut(400).removeClass('active');
+			currSubMenu.stop(true).fadeOut(300).removeClass('active');
 		}
 
 		(jQuery(window).width()>767) && jQuery(window).scroll(function(){
