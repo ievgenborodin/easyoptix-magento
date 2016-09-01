@@ -1335,7 +1335,7 @@
     line-height: 1.5;}
     .couponletter-left > img {  width: 90%;}
     .block-section-separator {     margin: 2em auto; }
-    .contact-block-context { width: 100%; }
+    .contact-block-context { width: 100%; padding: 0 15px; }
 }
 
 /* ====================================== *

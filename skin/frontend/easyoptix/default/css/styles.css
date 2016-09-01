@@ -2042,7 +2042,6 @@ img.big { padding: 30px; }
 
 /* Product Tags */
 .tags-list li { display:inline; font-size:15px; line-height:normal; margin-right:10px; }
-.contact-block-header { background:url(../images/media/contact.jpg); background-size:cover; height:124px; margin-bottom:2em; position:relative; }
 /* Advanced Search */
 .advanced-search + .buttons-set {max-width: 340px;}
 .advanced-search-amount {margin-bottom:5px;}
@@ -2067,10 +2066,12 @@ img.big { padding: 30px; }
 .form-adv-search .form-list select {width:500px;}
 
 /* Contact Us */
+.contact-block-header {}
+.contact-block-header img { width: 100%; }
 .contact-block { padding: 0 15px; }
-.contact-block-context { display:inline-block; line-height: 1.4; width: 85%; font-size: 12px; padding: 0 15px; margin:0 auto 2em; position: relative; } 
+.contact-block-context { display:inline-block; line-height: 1.4; width: 100%; font-size: 14px; margin:0 auto 2em; position: relative; } 
 .contact-block-h1 {  font-size: 1.2em; }
-.contact-block-h1 h1 {text-transform:uppercase; font-size: 1.5em; font-weight: 600; color: #3587C7; margin: 1em; }
+.contact-block-h1 h1 {text-transform:uppercase; font-size: 1.5em; font-weight: 600; color: #3587C7; margin: 1em 0; text-align:left; }
 .contact-block-text {  text-align: left;  font-size: 1.3em; }
 .contact-block-text p { color: #555; }
 
