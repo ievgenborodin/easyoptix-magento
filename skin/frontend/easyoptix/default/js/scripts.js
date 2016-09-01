@@ -455,7 +455,7 @@ jQuery(document).ready(function() {
 			currSubMenu.stop(true).fadeOut(300).removeClass('active');
 		}
 
-		(jQuery(window).width()>767) && jQuery(window).scroll(function(){
+		(jQuery(window).width()>850) && jQuery(window).scroll(function(){
 			var that = jQuery('.eyewear-side');
 			(that.length) && afixed(that);
 		});

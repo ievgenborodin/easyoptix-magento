@@ -1852,3 +1852,33 @@
 2016-09-01T03:25:12+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
 2016-09-01T03:25:12+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
 2016-09-01T03:25:12+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T03:26:44+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T03:26:44+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T03:26:44+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T03:54:06+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T03:54:06+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T03:54:06+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:01:36+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:01:36+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:01:36+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:05:07+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:05:07+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:05:07+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:09:46+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:09:46+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:09:46+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:11:07+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:11:07+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:11:07+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:12:02+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:12:02+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:12:02+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:12:12+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:12:12+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:12:12+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:23:19+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:23:19+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:23:19+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:23:42+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 3: parser error : Start tag expected, '&lt;' not found  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:23:42+00:00 ERR (3): Warning: simplexml_load_string():   in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510
+2016-09-01T04:23:42+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /Applications/MAMP/htdocs/public_html/lib/Varien/Simplexml/Config.php on line 510

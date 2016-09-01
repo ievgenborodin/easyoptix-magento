@@ -2107,6 +2107,7 @@ img.big { padding: 30px; }
 .returns-exchange-header h1 {text-transform:uppercase; font-size: 1.5em; font-weight: 600; color: #3587C7; margin: 0; text-align: left; }
 .returns-exchange-text {  text-align: left;  font-size: 1.3em; }
 .returns-exchange-text p { color: #555; }
+.returns-exchange-text p span { border: 1px solid; color: #333; display: block; padding: 10px; background-color: rgb(253, 251, 199); }
 
 /* Shipping Information */
 .shipping-information-wrap {  position: relative; font-size: 12px; display:inline-block; margin-bottom:2em;  }

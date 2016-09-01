@@ -182,11 +182,6 @@
   	label { font-size: 1.1em; line-height: 1.4em; }
 
   	.eyewear-sides > div { width: 49.7%; height: 100%; }
-  	
-  	.eyewear-rx { width: 70%; margin: 0 15%; display:table; }
-  	.eyewear-rx > div { width: 50%; margin: 0; display:table-cell; vertical-align: middle;}
-  	.rx-left img { padding-right: 2em; }
-  	.eyewear-rx-inner > h3 { margin-top: 0; }
   	.points-banner-wrap { height: 300px; }
   	.instagram-cols { width: 70%; margin: 0 15%; }
   	.eyewear-couponletter-wrap {     margin: 0 0 -3em; }
@@ -209,14 +204,7 @@
 	.block-cart-header:before{ display: none;}
 	.block-cart-header h3:before {content:"\f07a"; float: left; padding: 0 10px 0 19px; font-size: 18px; line-height: 31px; color: #fff; height: 42px; border: none;}
 	.block-cart-header .block-content:after{ content: '\f107'; position: absolute; right: 14px; top: 5px; font-size: 16px; color: #999;}
-	.block-cart-header:hover .block-content{ background: #f9f9f9;}*/
-
-  .btn-dior { left: 77%; bottom: 22%; }
-  .btn-ray-ban { left: 77%; bottom: 15%; }
-  .btn-miu-miu { left: 77%; bottom: 15%; }
-  .btn-maui-jim { left: 78%; bottom: 22%; }
-
-  	
+	.block-cart-header:hover .block-content{ background: #f9f9f9;}*/  	
 
     .col-left { display: block; }
     .category-sort { display: none; }
@@ -396,6 +384,17 @@
 
 	.brands{ margin-bottom: 10px;}
 }
+
+
+/* ====================================== *
+ *		min 851
+** ====================================== */
+@media only screen and (min-width: 851px) {  
+.eyewear-rx { width: 77%; }
+  	.eyewear-rx > div { width: 50%; margin: 0; display:table-cell; vertical-align: middle;}
+  	.rx-left img { padding-right: 2em; }
+  	.eyewear-rx-inner > h3 { margin-top: 0; }
+  }
 
 /* ====================================== *
  *		min 902
@@ -579,6 +578,7 @@
   	.couponletter-left > img { padding: 3em; }
 
   	.eyewear-rx-wrap {    margin-top: 1em; }
+  	.eyewear-rx { width: 70%; }
 
   	.about-us-wrap {  height: auto; font-size: 13px; } 
     .about-us-img { height: 800px; }
@@ -835,6 +835,7 @@
     .block-cart-header { right: 50px; }
     .block-cart-header .block-content > i { font-size: 30px; }
 }
+
 /* ====================================== *
  *		max 991
 ** ====================================== */
@@ -846,6 +847,18 @@
 	.sf-menu-phone{ border: 1px solid #ededed; }
 	.sf-menu-phone > li > a {padding: 11px 15px; }
 	.eyewear-sides-inner > h2 { margin: 0; }
+}
+
+
+/* ====================================== *
+ *		max 850
+** ====================================== */
+@media only screen and (max-width:850px) {
+.eyewear-side { width:100%; max-height: 53vw; height: 53vw; }
+.eyewear-side.eyeglasses-side { margin-right:0; }
+.rx-left > img { display: inline-block; width: 70%; } 
+	.eyewear-rx-inner > h3 { font-size: 2em; }
+	.eyewear-rx-inner > p { font-size: 16px; }
 }
 
 /* ====================================== *
@@ -1324,9 +1337,6 @@
     right: 0;}
     .eyewear-couponletter > .couponletter-right {
     width: 100%;}
-	.rx-left > img { display: inline-block; width: 70%; } 
-	.eyewear-rx-inner > h3 { font-size: 2em; }
-	.eyewear-rx-inner > p { font-size: 16px; }
 	.eyewear-couponletter-inner > h3 { font-size:2em; }
 	.eyewear-couponletter-inner > p {
     color: #777;
