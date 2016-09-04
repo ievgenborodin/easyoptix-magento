@@ -468,6 +468,23 @@ jQuery(document).ready(function() {
 		};
 		/* ========================== */
 		
+		/* lens width buttons */
+		var currLensWidth = '';
+		var lensWidthButtons = jQuery('.lens-width-btn');
+		
+		if (lensWidthButtons.length > 1) {
+			lensWidthButtons.eq(0).addClass('active');
+
+			lensWidthButtons.css('cursor', 'pointer').on('click', function(e){
+				var thisBtn = jQuery(this);
+				lensWidthButtons.removeClass('active');
+				thisBtn.addClass('active');
+				currLensWidth = thisBtn.html();
+			});
+		} else {
+			currLensWidth = lensWidthButtons.html();
+		}
+
 
 	    /*jQuery('.ajax-child').on('click', function (e) {
 	    	var that = jQuery(this);

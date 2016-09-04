@@ -97,9 +97,20 @@
                 </div>
             <?php endif; ?>
 
+            <div class="lens-width-box">
+                <?php $lens_width = $_product->getData('lens_width');
+                      $lens_width_arr = ($lens_width) ? explode(',', $lens_width) : []; ?>
+                <?php if (count($lens_width_arr)) : ?>
+                    <p class="attr-label">Lens Width:</p>
+                    <?php foreach($lens_width_arr as $l_width) : ?>
+                        <div class="lens-width-btn"><?php echo $l_width ?>mm</div>
+                    <?php endforeach ?>
+                <?php endif ?>
+            </div>
+
             <div class="colors-box">
                     <?php if ($_product->getData('model_parent')) : ?>
-                        <p class="attr-label"><?php echo $this->__('Color:') ?></p>
+                        <p class="attr-label">Color:</p>
                         <div class="colors-children">
                             <ul>
                             <?php $base = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
