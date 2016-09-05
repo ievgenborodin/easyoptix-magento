@@ -1714,7 +1714,7 @@ span.availability.out-of-stock { color:#d83820; }
 /* lens width box */
 .lens-width-box {  }
 .lens-width-btn { padding: .5em 1em; margin: 10px 5px 10px 0; display: inline-block; border: 1px solid #999; border-radius: 2px; color: #555; }
-.lens-width-btn.active { background-color: #356799; color: #eee; }
+.lens-width-btn.active { background-color: #356799; color: #eee; border-color: #356799; }
 
 .product-rows { padding-left: 0; margin:0; border-left: 1px solid #e6e6e6;}
 .product-rows li { margin-bottom: 29px; }
