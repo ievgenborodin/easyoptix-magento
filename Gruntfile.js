@@ -28,6 +28,7 @@ grunt.initConfig({
         '<%= sources.js %>/jquery.carouFredSel-6.2.1.min.js': ['<%= sources.js %>/jquery.carouFredSel-6.2.1.js'],
         '<%= sources.js %>/jquery.touchSwipe.min.js': ['<%= sources.js %>/jquery.touchSwipe.js'],
         '<%= sources.js %>/tm-stick-up.min.js': ['<%= sources.js %>/tm-stick-up.js'],
+        '<%= sources.js %>/bundle.min.js': ['<%= sources.js %>/bundle.js'],
         '<%= sources.js %>/camera.min.js': ['<%= sources.js %>/camera.js'],
         'js/sort/category.min.js': ['js/sort/category.js'],
         'js/ecommerceteam/cloud-zoom.1.0.2.min.js': ['js/ecommerceteam/cloud-zoom.1.0.2.js']

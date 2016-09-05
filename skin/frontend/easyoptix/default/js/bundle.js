@@ -1,1 +1,381 @@
-if("undefined"==typeof Product)var Product={};Product.Bundle=Class.create(),Product.Bundle.prototype={initialize:function(e){if(this.config=e,e.defaultValues)for(var i in e.defaultValues)if(this.config.options[i].isMulti){for(var t=new Array,n=0;n<e.defaultValues[i].length;n++)t.push(e.defaultValues[i][n]);this.config.selected[i]=t}else this.config.selected[i]=new Array(e.defaultValues[i]+"");this.reloadPrice()},changeSelection:function(e,i){var t=e.split("-"),n=i+"";""!=n?this.config.selected[t[2]]=new Array(n):this.config.selected[t[2]]=new Array,this.populateQty(t[2],n);var o=$("bundle-option-"+t[2]+"-tier-prices"),s="";""!=n&&1==this.config.options[t[2]].selections[n].customQty&&(s=this.config.options[t[2]].selections[n].tierPriceHtml),o.update(s),this.reloadPrice()},reloadPrice:function(){var e=0,i=0,t=0;for(var n in this.config.selected)if(this.config.options[n])for(var o=0;o<this.config.selected[n].length;o++){var s=this.selectionPrice(n,this.config.selected[n][o]);e+=Number(s[0]),i+=Number(s[1]),t+=Number(s[2])}if(taxCalcMethod==CACL_TOTAL_BASE){var r=e.toFixed(10),c=t.toFixed(10),a=c-r;e=t-Math.round(100*a)/100}"0"==this.config.priceType&&(e=Math.round(100*e)/100,i=Math.round(100*i)/100,t=Math.round(100*t)/100);var l=$(document).fire("bundle:reload-price",{price:e,priceInclTax:t,dispositionPrice:i,bundle:this});return l.noReloadPrice||(optionsPrice.specialTaxPrice="true",optionsPrice.changePrice("bundle",e),optionsPrice.changePrice("nontaxable",i),optionsPrice.changePrice("priceInclTax",t),optionsPrice.reload()),e},selectionPrice:function(e,i){if(""==i||"none"==i)return 0;var t,n,o=null;if(o=1!=this.config.options[e].selections[i].customQty||this.config.options[e].isMulti?this.config.options[e].selections[i].qty:$("bundle-option-"+e+"-qty-input")?$("bundle-option-"+e+"-qty-input").value:1,"0"==this.config.priceType){price=this.config.options[e].selections[i].price,tierPrice=this.config.options[e].selections[i].tierPrice;for(var s=0;s<tierPrice.length;s++)Number(tierPrice[s].price_qty)<=o&&Number(tierPrice[s].price)<=price&&(price=tierPrice[s].price,t=tierPrice[s].priceInclTax,n=tierPrice[s].priceExclTax)}else selection=this.config.options[e].selections[i],"0"==selection.priceType?price=selection.priceValue:price=this.config.basePrice*selection.priceValue/100;var r=this.config.options[e].selections[i].plusDisposition+this.config.options[e].selections[i].minusDisposition;if(this.config.specialPrice&&(newPrice=price*this.config.specialPrice/100,price=Math.min(newPrice,price)),selection=this.config.options[e].selections[i],void 0!==t&&void 0!==n?(priceInclTax=t,price=n):void 0!==selection.priceInclTax?(priceInclTax=selection.priceInclTax,price=void 0!==selection.priceExclTax?selection.priceExclTax:selection.price):priceInclTax=price,"1"==this.config.priceType||taxCalcMethod==CACL_TOTAL_BASE){var c=new Array(price*o,r*o,priceInclTax*o);return c}if(taxCalcMethod==CACL_UNIT_BASE){price=(Math.round(100*price)/100).toString(),r=(Math.round(100*r)/100).toString(),priceInclTax=(Math.round(100*priceInclTax)/100).toString();var c=new Array(price*o,r*o,priceInclTax*o);return c}price=(Math.round(price*o*100)/100).toString(),r=(Math.round(r*o*100)/100).toString(),priceInclTax=(Math.round(priceInclTax*o*100)/100).toString();var c=new Array(price,r,priceInclTax);return c},populateQty:function(e,i){return""==i||"none"==i?void this.showQtyInput(e,"0",!1):void(1==this.config.options[e].selections[i].customQty?this.showQtyInput(e,this.config.options[e].selections[i].qty,!0):this.showQtyInput(e,this.config.options[e].selections[i].qty,!1))},showQtyInput:function(e,i,t){elem=$("bundle-option-"+e+"-qty-input"),elem.value=i,elem.disabled=!t,t?elem.removeClassName("qty-disabled"):elem.addClassName("qty-disabled")},changeOptionQty:function(e,i){var t=!0;"undefined"!=typeof i&&(8==i.keyCode||46==i.keyCode)&&(t=!1),t&&(0==Number(e.value)||isNaN(Number(e.value)))&&(e.value=1),parts=e.id.split("-"),optionId=parts[2],this.config.options[optionId].isMulti||(selectionId=this.config.selected[optionId][0],this.config.options[optionId].selections[selectionId].qty=1*e.value,this.reloadPrice())},validationCallback:function(e,i){if(void 0!=e&&void 0!=$(e)){var t=$(e).up("ul.options-list");"undefined"!=typeof t&&("failed"==i?(t.removeClassName("validation-passed"),t.addClassName("validation-failed")):(t.removeClassName("validation-failed"),t.addClassName("validation-passed")))}}},jQuery(document).ready(function(){function e(){var e,i=jQuery(".bundle-option-button.lenstype-col.lens-marked"),t=jQuery(".bundle-option-button.lensmaterial-col.lens-marked"),n=jQuery(".lenstransition-block");i.length&&(jQuery(".lensmaterial-block").addClass("show-iblock"),t.length&&(jQuery(".lensanti-reflection-block").addClass("show-iblock"),2!=i.eq(0).data("index")?n.addClass("show-iblock"):(n.removeClass("show-iblock"),e=n.find(".bundle-option-button").removeClass("lens-marked").eq(0).addClass("lens-marked").data("id"),bundle.changeSelection(e,"")),jQuery(".product-options-bottom").addClass("show-iblock")))}jQuery(".dark-wrapper").appendTo(jQuery("body")),jQuery(".lenstype-desc").html("Choose the lens type"),jQuery(".lensmaterial-desc").html("Choose the material for your lens"),jQuery(".lensanti-reflection-desc").html("Add anti-reflaction to lens"),jQuery(".lenstransition-desc").html("Add transition or polarization to lens"),jQuery(".bundle-option-button").on("click",function(i){var t=jQuery(this),n=t.data("value"),o=t.data("id");t.siblings(".bundle-option-button").removeClass("lens-marked"),t.addClass("lens-marked"),jQuery("#"+o).val(n),bundle.changeSelection(o,n),e()}),jQuery(".terms-agree").on("click",function(e){var i=jQuery(this);i.hasClass("lens-button-on")||i.addClass("lens-button-on"),jQuery(".lenstype-block").addClass("show-iblock")}),jQuery(".compare").on("click",function(e){var i,t=jQuery(this).data("infoname");jQuery(".imagination > img").css("display","none"),i=jQuery(".imagination > ."+t),i.attr("src",i.data("src")).css("display","block"),jQuery(".dark-wrapper").css("display","block").css("height",jQuery(document).height()+"px")}),jQuery(".dark-wrapper").on("click",function(e){jQuery(this).css("display","none")})});
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+if(typeof Product=='undefined') {
+    var Product = {};
+}
+/**************************** BUNDLE PRODUCT **************************/
+Product.Bundle = Class.create();
+Product.Bundle.prototype = {
+    initialize: function(config){
+        this.config = config;
+
+        // Set preconfigured values for correct price base calculation
+        if (config.defaultValues) {
+            for (var option in config.defaultValues) {
+                if (this.config['options'][option].isMulti) {
+                    var selected = new Array();
+                    for (var i = 0; i < config.defaultValues[option].length; i++) {
+                        selected.push(config.defaultValues[option][i]);
+                    }
+                    this.config.selected[option] = selected;
+                } else {
+                    this.config.selected[option] = new Array(config.defaultValues[option] + "");
+                }
+            }
+        }
+
+        this.reloadPrice();
+    },
+    changeSelection: function(id, val){
+        var parts = id.split('-'), value= val+'';
+        if (value != '') {
+            this.config.selected[parts[2]] = new Array(value);
+        } else {
+            this.config.selected[parts[2]] = new Array();
+        }
+        this.populateQty(parts[2], value);
+        var tierPriceElement = $('bundle-option-' + parts[2] + '-tier-prices'),
+            tierPriceHtml = '';
+        if (value != '' && this.config.options[parts[2]].selections[value].customQty == 1) {
+            tierPriceHtml = this.config.options[parts[2]].selections[value].tierPriceHtml;
+        }
+        tierPriceElement.update(tierPriceHtml);
+        this.reloadPrice();
+    },
+
+    reloadPrice: function() {
+        var calculatedPrice = 0;
+        var dispositionPrice = 0;
+        var includeTaxPrice = 0;
+
+        for (var option in this.config.selected) {
+            if (this.config.options[option]) {
+                for (var i=0; i < this.config.selected[option].length; i++) {
+                    var prices = this.selectionPrice(option, this.config.selected[option][i]);
+                    calculatedPrice += Number(prices[0]);
+                    dispositionPrice += Number(prices[1]);
+                    includeTaxPrice += Number(prices[2]);
+                }
+            }
+        }
+
+        //Tax is calculated in a different way for the the TOTAL BASED method
+        //We round the taxes at the end. Hence we do the same for consistency
+        //This variable is set in the bundle.phtml
+        if (taxCalcMethod == CACL_TOTAL_BASE) {
+            var calculatedPriceFormatted = calculatedPrice.toFixed(10);
+            var includeTaxPriceFormatted = includeTaxPrice.toFixed(10);
+            var tax = includeTaxPriceFormatted - calculatedPriceFormatted;
+            calculatedPrice = includeTaxPrice - Math.round(tax * 100) / 100;
+        }
+
+        //make sure that the prices are all rounded to two digits
+        //this is needed when tax calculation is based on total for dynamic
+        //price bundle product. For fixed price bundle product, the rounding
+        //needs to be done after option price is added to base price
+        if (this.config.priceType == '0') {
+            calculatedPrice = Math.round(calculatedPrice*100)/100;
+            dispositionPrice = Math.round(dispositionPrice*100)/100;
+            includeTaxPrice = Math.round(includeTaxPrice*100)/100;
+
+        }
+
+        var event = $(document).fire('bundle:reload-price', {
+            price: calculatedPrice,
+            priceInclTax: includeTaxPrice,
+            dispositionPrice: dispositionPrice,
+            bundle: this
+        });
+        if (!event.noReloadPrice) {
+            optionsPrice.specialTaxPrice = 'true';
+            optionsPrice.changePrice('bundle', calculatedPrice);
+            optionsPrice.changePrice('nontaxable', dispositionPrice);
+            optionsPrice.changePrice('priceInclTax', includeTaxPrice);
+            optionsPrice.reload();
+        }
+
+        return calculatedPrice;
+    },
+
+    selectionPrice: function(optionId, selectionId) {
+        if (selectionId == '' || selectionId == 'none') {
+            return 0;
+        }
+        var qty = null;
+        var tierPriceInclTax, tierPriceExclTax;
+        if (this.config.options[optionId].selections[selectionId].customQty == 1 && !this.config['options'][optionId].isMulti) {
+            if ($('bundle-option-' + optionId + '-qty-input')) {
+                qty = $('bundle-option-' + optionId + '-qty-input').value;
+            } else {
+                qty = 1;
+            }
+        } else {
+            qty = this.config.options[optionId].selections[selectionId].qty;
+        }
+        if (this.config.priceType == '0') {
+            price = this.config.options[optionId].selections[selectionId].price;
+            tierPrice = this.config.options[optionId].selections[selectionId].tierPrice;
+
+            for (var i=0; i < tierPrice.length; i++) {
+                if (Number(tierPrice[i].price_qty) <= qty && Number(tierPrice[i].price) <= price) {
+                    price = tierPrice[i].price;
+                    tierPriceInclTax = tierPrice[i].priceInclTax;
+                    tierPriceExclTax = tierPrice[i].priceExclTax;
+                }
+            }
+        } else {
+            selection = this.config.options[optionId].selections[selectionId];
+            if (selection.priceType == '0') {
+                price = selection.priceValue;
+            } else {
+                price = (this.config.basePrice*selection.priceValue)/100;
+            }
+        }
+        //price += this.config.options[optionId].selections[selectionId].plusDisposition;
+        //price -= this.config.options[optionId].selections[selectionId].minusDisposition;
+        //return price*qty;
+        var disposition = this.config.options[optionId].selections[selectionId].plusDisposition +
+            this.config.options[optionId].selections[selectionId].minusDisposition;
+
+        if (this.config.specialPrice) {
+            newPrice = (price*this.config.specialPrice)/100;
+            price = Math.min(newPrice, price);
+        }
+
+        selection = this.config.options[optionId].selections[selectionId];
+        if (tierPriceInclTax !== undefined && tierPriceExclTax !== undefined) {
+            priceInclTax = tierPriceInclTax;
+            price = tierPriceExclTax;
+        } else if (selection.priceInclTax !== undefined) {
+            priceInclTax = selection.priceInclTax;
+            price = selection.priceExclTax !== undefined ? selection.priceExclTax : selection.price;
+        } else {
+            priceInclTax = price;
+        }
+
+        if (this.config.priceType == '1' || taxCalcMethod == CACL_TOTAL_BASE) {
+            var result = new Array(price*qty, disposition*qty, priceInclTax*qty);
+            return result;
+        }
+        else if (taxCalcMethod == CACL_UNIT_BASE) {
+            price = (Math.round(price*100)/100).toString();
+            disposition = (Math.round(disposition*100)/100).toString();
+            priceInclTax = (Math.round(priceInclTax*100)/100).toString();
+            var result = new Array(price*qty, disposition*qty, priceInclTax*qty);
+            return result;
+        } else { //taxCalcMethod == CACL_ROW_BASE)
+            price = (Math.round(price*qty*100)/100).toString();
+            disposition = (Math.round(disposition*qty*100)/100).toString();
+            priceInclTax = (Math.round(priceInclTax*qty*100)/100).toString();
+            var result = new Array(price, disposition, priceInclTax);
+            return result;
+        }
+    },
+
+    populateQty: function(optionId, selectionId){
+        if (selectionId == '' || selectionId == 'none') {
+            this.showQtyInput(optionId, '0', false);
+            return;
+        }
+        if (this.config.options[optionId].selections[selectionId].customQty == 1) {
+            this.showQtyInput(optionId, this.config.options[optionId].selections[selectionId].qty, true);
+        } else {
+            this.showQtyInput(optionId, this.config.options[optionId].selections[selectionId].qty, false);
+        }
+    },
+
+    showQtyInput: function(optionId, value, canEdit) {
+        elem = $('bundle-option-' + optionId + '-qty-input');
+        elem.value = value;
+        elem.disabled = !canEdit;
+        if (canEdit) {
+            elem.removeClassName('qty-disabled');
+        } else {
+            elem.addClassName('qty-disabled');
+        }
+    },
+
+    changeOptionQty: function (element, event) {
+        var checkQty = true;
+        if (typeof(event) != 'undefined') {
+            if (event.keyCode == 8 || event.keyCode == 46) {
+                checkQty = false;
+            }
+        }
+        if (checkQty && (Number(element.value) == 0 || isNaN(Number(element.value)))) {
+            element.value = 1;
+        }
+        parts = element.id.split('-');
+        optionId = parts[2];
+        if (!this.config['options'][optionId].isMulti) {
+            selectionId = this.config.selected[optionId][0];
+            this.config.options[optionId].selections[selectionId].qty = element.value*1;
+            this.reloadPrice();
+        }
+    },
+
+    validationCallback: function (elmId, result){
+        if (elmId == undefined || $(elmId) == undefined) {
+            return;
+        }
+        var container = $(elmId).up('ul.options-list');
+        if (typeof container != 'undefined') {
+            if (result == 'failed') {
+                container.removeClassName('validation-passed');
+                container.addClassName('validation-failed');
+            } else {
+                container.removeClassName('validation-failed');
+                container.addClassName('validation-passed');
+            }
+        }
+    }
+}
+
+jQuery(document).ready(function(){
+    jQuery('.dark-wrapper').appendTo(jQuery('body'));
+    jQuery('.lenstype-desc').html('Choose the lens type');
+    jQuery('.lensmaterial-desc').html('Choose the material for your lens');
+    jQuery('.lensanti-reflection-desc').html('Add anti-reflaction to lens');
+    jQuery('.lenstransition-desc').html('Add transition or polarization to lens');
+
+    var stepMarker = document.getElementById('step-marker');
+
+    function focusOn(stepMarker){
+        var theWindow = jQuery(window);
+
+        // get current scroll top position
+        var scrollTop = theWindow.scrollTop();
+
+        // get current market top
+        var markerTop = stepMarker.getBoundingClientRect().top;
+
+        // get header adjustment
+        var windowWidth = theWindow.width();
+        var topAdjustment = (windowWidth < 1024) ? jQuery('.top-icon-menu').innerHeight() : jQuery('.header-wrap').innerHeight();
+
+        var newScrollTop = scrollTop + markerTop - topAdjustment; 
+
+        // animate scroll change
+        jQuery('body,html').stop(false,false).animate({
+            scrollTop: newScrollTop
+        }, 1000);
+    };
+
+    // initial scroll move to the prescription block
+    focusOn(stepMarker);
+
+    jQuery('.bundle-option-button').on('click', function(e){
+        var that = jQuery(this),
+        value = that.data('value'),
+        id = that.data('id');
+
+        that.siblings('.bundle-option-button').removeClass('lens-marked');
+        that.addClass('lens-marked');
+        jQuery('#' + id).val(value);
+        bundle.changeSelection(id, value);
+        controlSteps();
+    });
+
+
+
+    function controlSteps(){
+        var lensType = jQuery('.bundle-option-button.lenstype-col.lens-marked'),
+            lensMaterial = jQuery('.bundle-option-button.lensmaterial-col.lens-marked'),
+            lensTransition = jQuery('.lenstransition-block'), id;
+
+        if (lensType.length){
+            var lensmaterialBlock = jQuery('.lensmaterial-block');
+            if (!lensmaterialBlock.hasClass('show-iblock')) {
+                lensmaterialBlock.addClass('show-iblock').append(stepMarker);
+                focusOn(stepMarker);
+            }
+            
+            if (lensMaterial.length){
+                var lensantireflectionBlock = jQuery('.lensanti-reflection-block');
+                if (!lensantireflectionBlock.hasClass('show-iblock')) {
+                    lensantireflectionBlock.addClass('show-iblock').append(stepMarker);
+                    focusOn(stepMarker);
+                }
+                if (lensType.eq(0).data('index')!=2) 
+                    lensTransition.addClass('show-iblock'); 
+                else {
+                    lensTransition.removeClass('show-iblock'); 
+                    id = lensTransition.find('.bundle-option-button').removeClass('lens-marked').eq(0).addClass('lens-marked').data('id');
+                    bundle.changeSelection(id, '');
+                }
+                jQuery('.product-options-bottom').addClass('show-iblock');
+            }   
+        }
+    };
+
+    jQuery('.terms-agree').on('click', function(e){
+        var that = jQuery(this);
+        if (!that.hasClass('lens-button-on')) that.addClass('lens-button-on');
+        var lenstypeBlock = jQuery('.lenstype-block');
+        if (!lenstypeBlock.hasClass('show-iblock')) {
+            lenstypeBlock.addClass('show-iblock').append(stepMarker);
+            //stepMarker.innerHTML = '2';
+            focusOn(stepMarker);
+        }
+
+        /*lensTypeCols.eq(0).find('.recommended').addClass('recommended-on');
+        lensTypeCols.eq(1).find('.recommended').addClass('recommended-on');
+
+        lensMatCols.eq(1).find('.recommended').addClass('recommended-on');
+
+        lensAntiReflectionCols.eq(1).find('.recommended').addClass('recommended-on');
+        lensAntiReflectionCols.eq(2).find('.recommended').addClass('recommended-on');
+
+        lensTransitionCols.eq(0).find('.recommended').addClass('recommended-on');
+        lensTransitionCols.eq(1).find('.recommended').addClass('recommended-on');*/
+
+        /*jQuery('.recommended-on').hover(function(){
+            var that = jQuery(this),
+            text = that.find('.why-text').html(),
+            bb = that[0].getBoundingClientRect();
+
+            descriptionBlock.css('display', 'block')
+            .css('left', bb.left - bb.width + 'px')
+            .css('top', bb.top - bb.height + jQuery(window).scrollTop() + 'px')
+            .css('max-width', bb.width*2)
+            .find('.description').html(text);
+        }, function (){
+            descriptionBlock.css('display', 'none');
+        });*/
+    });
+
+    jQuery('.compare').on('click', function(e){
+        var name = jQuery(this).data('infoname'), image;
+        jQuery('.imagination > img').css('display','none');
+        image = jQuery('.imagination > .' + name);
+        image.attr('src', image.data('src')).css('display', 'block');
+        jQuery('.dark-wrapper').css('display', 'block').css('height', jQuery(document).height() + 'px');
+    });
+
+    jQuery('.dark-wrapper').on('click', function(e){
+        jQuery(this).css('display', 'none');
+    });
+
+});

@@ -30,12 +30,15 @@
 <?php if ($_product->isSaleable()):?>
     <?php if (count($_options)): ?>
         <div class="draft">
-            <div class="prescription-block">        
+          <div class="prescription-block">
+          <span id="step-marker">
+            <!-- <i class="fa fa-hand-o-right" aria-hidden="true"></i> -->
+          </span>        
             <info class="compare-wrap"><div data-infoname="prescription-help" class="compare"><i class="fa fa-question"></i></div></info>
             <div class="prescription-table">
                     <div class="draft-block-title">
                         <h4>Prescription</h4>
-                        <span>Please enter your prescription to help us to serve you better.</span>
+                        <span>Please enter your prescription to help us to serve you better. When finish press Agree.</span>
                     </div>
 
                 <div class="prescription-row">

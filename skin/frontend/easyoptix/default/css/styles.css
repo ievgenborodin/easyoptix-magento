@@ -621,6 +621,7 @@ div.alert button:hover{ cursor:pointer; background-position:0 -9px;}
 .sort-block-title > span { text-align: left; width: 100%; display: inline-block; }
 
 /*end new fs*/
+
 .block-section-separator { width: 100%; min-height:1px; }
 
 .filter { text-align: left; margin: 10px 0 20px; color: #666; border-bottom: 1px solid #ccc;  padding-bottom: 10px; }
@@ -2969,8 +2970,11 @@ h3 { font-size: 18px; line-height: 2; }
 
 
 /* ///////////////////////////     draft block        ///////////////////////////// */
+/* spet marker */
+#step-marker {  display: block; width: 1px; height: 1px; color: #333; position: absolute; top:0; left: 0px; }
+/* width: 2.5em; border-radius: 50%; border: 1px solid #333; padding: .5em; left:-100px; */
 
-.draft { overflow: hidden; height: auto; max-height: none; position: relative; float: left; }
+.draft { /*overflow: hidden;*/ height: auto; max-height: none; position: relative; float: left; }
 .draft-block-title {  }
 .draft-block-title h4 { font-size: 20px; margin: 10px auto 4px; color: #444; }
 .draft-block-title span { color: #555; display: block; margin-bottom: 15px; }
