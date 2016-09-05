@@ -385,12 +385,35 @@ jQuery(document).ready(function(){
         (newHeight > 0) ? that.css('height', newHeight) : that.css('height', 0);
     };
 
+    function setCategoryHeaderSize(){
+        var currafix = jQuery('.category-image-wrap');
+
+        // set category image height 1:5
+        var catImageHeight = currafix.width() * .2;
+        currafix.css('height', catImageHeight + 'px')
+                .css('max-height', catImageHeight + 'px');
+    }
+
+    function getFSbreak(){
+        var theWidth = jQuery(window).width();
+
+        return (theWidth > 1023) ? 164 : (theWidth > 767) ? 100 : 50 + jQuery('.category-image-wrap').height();
+    }
+
     var theWindow = jQuery(window),
         fsWrap = jQuery('.fs-wrap'),
-        fsTopCatch;
+        fsTopCatch,
+        currafix = jQuery('.category-image-wrap');
+
+    setCategoryHeaderSize();
 
     // top point to catch filters menu
-    fsTopCatch = (theWindow.width() < 1023) ? 150 : 95; 
+    fsTopCatch = getFSbreak(); 
+
+    theWindow.resize(function() {
+        setCategoryHeaderSize();
+        fsTopCatch = getFSbreak();
+    });
 
     // first auto start
     getVisibles();
@@ -404,8 +427,7 @@ jQuery(document).ready(function(){
     theWindow.scroll(function() {
     	var scrol = jQuery(this).scrollTop(),
     	invisibles = jQuery('.product-img.hid').length;
-
-        var currafix = jQuery('.category-image-wrap');
+        console.log(scrol);
         (currafix.length) && (theWindow.width()>767) && afixed(currafix);
 
         if (scrol>fsTopCatch)
@@ -414,7 +436,7 @@ jQuery(document).ready(function(){
             fsWrap.removeClass('fix');
         if (scrol - lastScroll > 150 && invisibles != 0){
         	lastScroll = scrol;
-        	getVisibles(); console.log("executed");
+        	getVisibles(); 
         }
     });
 
