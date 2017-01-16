@@ -59,7 +59,7 @@ foreach($brand_ids as $brand)
   foreach($products_list as $p)
   {
     // only eyewear set
-    if ($p['set'] == $eyewear_set)
+    if ($p['set'] == $eyewear_set && substr($p['sku'], 0, 7) == 'ray-ban')
     {
       $products[] = $p['sku'];
       $n++;
@@ -67,16 +67,15 @@ foreach($brand_ids as $brand)
   }
   echo "Product list set [$n] \n\n";
   
-
   foreach ($products as $p)
   {
     $curr_product = $client->call($session_id, 'catalog_product.info', $p);
 
     $brand = $curr_product['brand'];
-    if ($brand == $ray_ban || $brand == $miu_miu && $curr_product['price'])
+    if ($brand == $ray_ban && $curr_product['price'])
     {
       $old_price = $curr_product['price']; echo 'old: ' . $old_price;
-      $price = round($old_price + (0.2 * $old_price)); echo ", new: " . $price . "\n";
+      $price = round($old_price + (0.3 * $old_price)); echo ", new: " . $price . "\n";
       
       $client->call($session_id, 'catalog_product.update', array($p, array(
         'price' => $price

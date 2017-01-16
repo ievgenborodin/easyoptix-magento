@@ -81,8 +81,11 @@ function find_images($path, $file)
 
       // resizing 
       shell_exec("sips -Z 408 $small_image_dir/*.jpg");
-      shell_exec("sips -Z 100 $thumbnail_dir/*.jpg");
-      shell_exec("sips -Z 1200 *.jpg");
+      shell_exec("sips -Z 140 $thumbnail_dir/*.jpg");
+      shell_exec("mogrify -resize 1200x1200 -gravity center -extent 1200x1200 *.jpg");
+
+      //shell_exec("mogrify -resize 408x408 -gravity center -extent 408x408 $small_image_dir/*.jpg");
+      //shell_exec("sips -Z 1200 *.jpg");
     }
     else 
     { 
